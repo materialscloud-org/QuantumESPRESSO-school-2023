@@ -1,0 +1,18 @@
+*/TMP-CP
+*/*init
+*/*calc_alpha
+*/*screening
+*/*hamiltonian
+*/*final
+*/*postproc
+*/*.bib
+*/*.kwf
+
+# Tutorial 1
+exercise1/BE.dat
+
+# Tutorial 2
+exercise2/*.png
+
+# Tutorial 3
+exercise3/out

@@ -1,0 +1,90 @@
+
+     Program WANN2KCP v.7.1 starts on 31Oct2022 at 16: 6:41 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on    24 processors
+
+     MPI processes distributed on     1 nodes
+     R & G space division:  proc/nbgrp/npool/nimage =      24
+     181613 MiB available memory on the printing compute node when the environment starts
+ 
+ 
+  Reading nscf_save data
+
+     Reading xml data from directory:
+
+     /home/degennar/CODES/hubbard-koopmans-2022/Day3/exercise2/init/TMP/kc.save/
+
+     IMPORTANT: XC functional enforced from input :
+     Exchange-correlation= PW
+                           (   1   4   0   0   0   0   0)
+     Any further DFT definition will be discarded
+     Please, verify this is what you really want
+
+ 
+     Parallelization info
+     --------------------
+     sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
+     Min          12      12      3                  136      136      23
+     Max          13      13      4                  138      138      27
+     Sum         295     295     91                 3287     3287     609
+ 
+     Using Slab Decomposition
+ 
+     Reading collected, re-writing distributed wavefunctions
+ 
+  Spin CASE ( default = unpolarized )
+ 
+  Mode is: wannier2kcp    
+ 
+  Checking info from wannier.nnkp file
+ 
+  - Real lattice is ok
+  - Reciprocal lattice is ok
+  - K-points are ok
+  - Number of wannier functions is ok (  4)
+  - All guiding functions are given 
+ 
+ Projections:
+   -0.250000    0.250000    0.250000 -3  1  1    1.000000
+   -0.250000    0.250000    0.250000 -3  2  1    1.000000
+   -0.250000    0.250000    0.250000 -3  3  1    1.000000
+   -0.250000    0.250000    0.250000 -3  4  1    1.000000
+ 
+  Reading data about k-point neighbours 
+ 
+  All neighbours are found 
+ 
+ 
+     Info about the supercell FFT
+     ----------------------------
+     sticks:   smooth     PW     G-vecs:    smooth      PW
+     Min           48     12                  1091     136
+     Max           49     13                  1095     138
+     Sum         1159    295                 26229    3287
+
+     grid:      26229 G-vectors     FFT dimensions: (  48,  48,  48)
+
+     Gamma-only algorithm is not used --> complex wavefunctions
+ 
+ 
+     init_wann2kc :      0.08s CPU      0.10s WALL (       1 calls)
+     wannier2kcp  :      0.03s CPU      0.04s WALL (       1 calls)
+ 
+     WANN2KCP     :      0.11s CPU      0.14s WALL
+
+ 
+   This run was terminated on:  16: 6:41  31Oct2022            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=
+ 
