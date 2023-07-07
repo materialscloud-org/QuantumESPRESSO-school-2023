@@ -1,0 +1,10 @@
+-- 
+&input
+  fildyn='bn.dyn1.xml'
+  amass(1) = 10.811 
+  amass(2) = 14.0067
+  asr = 'simple'
+  lperm = .true.
+  filout = 'bn.dynmat.out'
+  fileig = 'bn.eig'
+/

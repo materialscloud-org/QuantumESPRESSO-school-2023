@@ -1,0 +1,63 @@
+--
+&inputepw
+  prefix      = 'mgb2',
+  outdir      = './'
+  dvscf_dir   = '../phonon/save'
+
+  ep_coupling = .true.
+  elph        = .true.
+  epwwrite    = .true.
+  epwread     = .false.
+
+  etf_mem     =  1 
+
+  wannierize  = .true.
+  nbndsub     =  5
+
+  num_iter    = 500
+  dis_froz_max = 8.8
+  proj(1)     = 'B:pz'
+  proj(2)     = 'f=0.5,1.0,0.5:s'
+  proj(3)     = 'f=0.0,0.5,0.5:s'
+  proj(4)     = 'f=0.5,0.5,0.5:s'
+
+  iverbosity  = 2
+
+  fsthick     = 0.2   ! eV
+  degaussw    = 0.05  ! eV
+
+  fermi_plot  = .true.
+  ephwrite    = .true. 
+  eliashberg  = .true.
+
+  laniso      = .true.
+  fbw         = .true.
+  limag       = .true.
+  lpade       = .true.
+  lacon       = .false.
+
+  nsiter      = 500
+  conv_thr_iaxis = 1.0d-3
+  wscut       = 0.5  ! eV
+  muc         = 0.05  
+
+  nstemp      = 10
+  temps       = 10 55
+
+  nk1         = 6
+  nk2         = 6
+  nk3         = 6
+
+  nq1         = 3
+  nq2         = 3
+  nq3         = 3
+
+  mp_mesh_k   = .true.
+  nkf1        = 40
+  nkf2        = 40
+  nkf3        = 40
+
+  nqf1        = 20
+  nqf2        = 20
+  nqf3        = 20
+ /
