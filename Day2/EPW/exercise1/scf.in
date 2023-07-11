@@ -3,7 +3,7 @@
     calculation     = 'scf'
     prefix          = 'bn'
     restart_mode    = 'from_scratch'
-    pseudo_dir      = '../pseudo'
+    pseudo_dir      = '../../../files/pseudo/'
     outdir          = './'
  /
  &system

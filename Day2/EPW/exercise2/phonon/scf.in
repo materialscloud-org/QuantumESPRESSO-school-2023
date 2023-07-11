@@ -2,7 +2,7 @@
   calculation  = 'scf',
   restart_mode = 'from_scratch',
   prefix       = 'mgb2',
-  pseudo_dir   = '../../pseudo/',
+  pseudo_dir   = '../../../../files/pseudo/',
   outdir       = './',
  /
  &system    

@@ -1,7 +1,7 @@
  &control
   calculation = 'nscf',
   prefix      = 'mgb2',
-  pseudo_dir  = '../../pseudo/',
+  pseudo_dir  = '../../../../files/pseudo/',
   outdir      = './',
   verbosity   = 'high'
  /
