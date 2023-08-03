@@ -39,3 +39,6 @@ CELL_PARAMETERS {alat}
    1.045799900   0.582729109   0.582729109
 K_POINTS {automatic}
  6 6 6 0 0 0
+HUBBARD {ortho-atomic}
+U Fe1-3d 0.0001
+U Fe2-3d 0.0001
