@@ -4,7 +4,7 @@
     "method": "dscf",
     "init_orbitals": "kohn-sham",
     "from_scratch": true,
-    "n_max_sc_steps": 1,
+    "alpha_numsteps": 1,
     "pseudo_library": "sg15"
   },
   "atoms": {

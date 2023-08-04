@@ -6,7 +6,7 @@ set grid
 set xlab "Exp. [eV]"
 set ylab "Theo. [eV]"
 set key bottom
-pl [5:25][5:25] x notit lc rgb 'black', 'BE.dat' u 1:3 w p pt 9 lc rgb 'blue' tit 'DFT[PBE]', '' u 2:3 tit 'KI' w p pt 5 lc rgb 'red'
+pl [5:25][5:25] x notit lc rgb 'black', 'BE.dat' u 3:1 w p pt 9 lc rgb 'blue' tit 'DFT[PBE]', '' u 3:2 tit 'KI' w p pt 5 lc rgb 'red'
 
 set boxwidth 0.25
 set style fill solid
