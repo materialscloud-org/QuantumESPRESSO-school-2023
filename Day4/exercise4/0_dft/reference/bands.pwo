@@ -1,5 +1,5 @@
 
-     Program PWSCF v.7.1 starts on  2Nov2022 at 11:38:23 
+     Program PWSCF v.7.2 starts on  4Aug2023 at 10:19:40 
 
      This program is part of the open-source Quantum ESPRESSO suite
      for quantum simulation of materials; please cite
@@ -13,8 +13,8 @@
      Parallel version (MPI), running on     1 processors
 
      MPI processes distributed on     1 nodes
-     391 MiB available memory on the printing compute node when the environment starts
- 
+     2266 MiB available memory on the printing compute node when the environment starts
+
      Reading input from bands.pwi
 
      Current dimensions of program PWSCF are:
@@ -25,19 +25,19 @@
      Atomic positions and unit cell read from directory:
      ./out/si.save/
      Atomic positions from file used, from input discarded
- 
- 
+
+
      Subspace diagonalization in iterative solution of the eigenvalue problem:
      a serial algorithm will be used
 
- 
+
      G-vector sticks info
      --------------------
      sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
      Sum         295     295     91                 3287     3287     609
- 
+
      Using Slab Decomposition
- 
+
 
 
      bravais-lattice index     =            2
@@ -701,18 +701,18 @@ T_2u   3.00  0.00 -1.00 -1.00  1.00 -3.00  0.00  1.00  1.00 -1.00
         k(   31) = (  -1.0000000   0.0000000   0.0000000), wk =   0.0327869
         k(   32) = (  -0.9833333   0.0500000  -0.0000000), wk =   0.0327869
         k(   33) = (  -0.9666667   0.1000000   0.0000000), wk =   0.0327869
-        k(   34) = (  -0.9500000   0.1500000  -0.0000000), wk =   0.0327869
+        k(   34) = (  -0.9500000   0.1500000   0.0000000), wk =   0.0327869
         k(   35) = (  -0.9333333   0.2000000   0.0000000), wk =   0.0327869
-        k(   36) = (  -0.9166667   0.2500000   0.0000000), wk =   0.0327869
+        k(   36) = (  -0.9166667   0.2500000  -0.0000000), wk =   0.0327869
         k(   37) = (  -0.9000000   0.3000000   0.0000000), wk =   0.0327869
         k(   38) = (  -0.8833333   0.3500000   0.0000000), wk =   0.0327869
         k(   39) = (  -0.8666667   0.4000000   0.0000000), wk =   0.0327869
-        k(   40) = (  -0.8500000   0.4500000   0.0000000), wk =   0.0327869
+        k(   40) = (  -0.8500000   0.4500000  -0.0000000), wk =   0.0327869
         k(   41) = (  -0.8333333   0.5000000   0.0000000), wk =   0.0327869
-        k(   42) = (  -0.8166667   0.5500000  -0.0000000), wk =   0.0327869
+        k(   42) = (  -0.8166667   0.5500000   0.0000000), wk =   0.0327869
         k(   43) = (  -0.8000000   0.6000000   0.0000000), wk =   0.0327869
-        k(   44) = (  -0.7833333   0.6500000  -0.0000000), wk =   0.0327869
-        k(   45) = (  -0.7666667   0.7000000   0.0000000), wk =   0.0327869
+        k(   44) = (  -0.7833333   0.6500000   0.0000000), wk =   0.0327869
+        k(   45) = (  -0.7666667   0.7000000  -0.0000000), wk =   0.0327869
         k(   46) = (  -0.7500000   0.7500000   0.0000000), wk =   0.0327869
         k(   47) = (  -0.7000000   0.7000000   0.0000000), wk =   0.0327869
         k(   48) = (  -0.6500000   0.6500000   0.0000000), wk =   0.0327869
@@ -834,7 +834,7 @@ T_2u   3.00  0.00 -1.00 -1.00  1.00 -3.00  0.00  1.00  1.00 -1.00
      Davidson diagonalization with overlap
 
      Computing kpt #:     1  of    61
-     total cpu time spent up to now is        0.2 secs
+     total cpu time spent up to now is        0.3 secs
 
      Computing kpt #:     2  of    61
      total cpu time spent up to now is        0.3 secs
@@ -843,7 +843,7 @@ T_2u   3.00  0.00 -1.00 -1.00  1.00 -3.00  0.00  1.00  1.00 -1.00
      total cpu time spent up to now is        0.3 secs
 
      Computing kpt #:     4  of    61
-     total cpu time spent up to now is        0.3 secs
+     total cpu time spent up to now is        0.4 secs
 
      Computing kpt #:     5  of    61
      total cpu time spent up to now is        0.4 secs
@@ -858,7 +858,7 @@ T_2u   3.00  0.00 -1.00 -1.00  1.00 -3.00  0.00  1.00  1.00 -1.00
      total cpu time spent up to now is        0.5 secs
 
      Computing kpt #:     9  of    61
-     total cpu time spent up to now is        0.6 secs
+     total cpu time spent up to now is        0.5 secs
 
      Computing kpt #:    10  of    61
      total cpu time spent up to now is        0.6 secs
@@ -867,158 +867,158 @@ T_2u   3.00  0.00 -1.00 -1.00  1.00 -3.00  0.00  1.00  1.00 -1.00
      total cpu time spent up to now is        0.6 secs
 
      Computing kpt #:    12  of    61
-     total cpu time spent up to now is        0.7 secs
+     total cpu time spent up to now is        0.6 secs
 
      Computing kpt #:    13  of    61
-     total cpu time spent up to now is        0.7 secs
+     total cpu time spent up to now is        0.6 secs
 
      Computing kpt #:    14  of    61
-     total cpu time spent up to now is        0.8 secs
+     total cpu time spent up to now is        0.7 secs
 
      Computing kpt #:    15  of    61
-     total cpu time spent up to now is        0.8 secs
+     total cpu time spent up to now is        0.7 secs
 
      Computing kpt #:    16  of    61
-     total cpu time spent up to now is        0.9 secs
+     total cpu time spent up to now is        0.7 secs
 
      Computing kpt #:    17  of    61
-     total cpu time spent up to now is        0.9 secs
+     total cpu time spent up to now is        0.8 secs
 
      Computing kpt #:    18  of    61
-     total cpu time spent up to now is        1.0 secs
+     total cpu time spent up to now is        0.8 secs
 
      Computing kpt #:    19  of    61
-     total cpu time spent up to now is        1.0 secs
+     total cpu time spent up to now is        0.8 secs
 
      Computing kpt #:    20  of    61
-     total cpu time spent up to now is        1.1 secs
+     total cpu time spent up to now is        0.9 secs
 
      Computing kpt #:    21  of    61
-     total cpu time spent up to now is        1.1 secs
+     total cpu time spent up to now is        0.9 secs
 
      Computing kpt #:    22  of    61
-     total cpu time spent up to now is        1.1 secs
+     total cpu time spent up to now is        0.9 secs
 
      Computing kpt #:    23  of    61
-     total cpu time spent up to now is        1.2 secs
+     total cpu time spent up to now is        1.0 secs
 
      Computing kpt #:    24  of    61
-     total cpu time spent up to now is        1.2 secs
+     total cpu time spent up to now is        1.0 secs
 
      Computing kpt #:    25  of    61
-     total cpu time spent up to now is        1.3 secs
+     total cpu time spent up to now is        1.0 secs
 
      Computing kpt #:    26  of    61
-     total cpu time spent up to now is        1.3 secs
+     total cpu time spent up to now is        1.1 secs
 
      Computing kpt #:    27  of    61
-     total cpu time spent up to now is        1.4 secs
+     total cpu time spent up to now is        1.1 secs
 
      Computing kpt #:    28  of    61
-     total cpu time spent up to now is        1.4 secs
+     total cpu time spent up to now is        1.1 secs
 
      Computing kpt #:    29  of    61
-     total cpu time spent up to now is        1.5 secs
+     total cpu time spent up to now is        1.2 secs
 
      Computing kpt #:    30  of    61
-     total cpu time spent up to now is        1.5 secs
+     total cpu time spent up to now is        1.2 secs
 
      Computing kpt #:    31  of    61
-     total cpu time spent up to now is        1.6 secs
+     total cpu time spent up to now is        1.2 secs
 
      Computing kpt #:    32  of    61
-     total cpu time spent up to now is        1.6 secs
+     total cpu time spent up to now is        1.3 secs
 
      Computing kpt #:    33  of    61
-     total cpu time spent up to now is        1.7 secs
+     total cpu time spent up to now is        1.3 secs
 
      Computing kpt #:    34  of    61
-     total cpu time spent up to now is        1.7 secs
+     total cpu time spent up to now is        1.4 secs
 
      Computing kpt #:    35  of    61
-     total cpu time spent up to now is        1.8 secs
+     total cpu time spent up to now is        1.4 secs
 
      Computing kpt #:    36  of    61
-     total cpu time spent up to now is        1.8 secs
+     total cpu time spent up to now is        1.4 secs
 
      Computing kpt #:    37  of    61
-     total cpu time spent up to now is        1.9 secs
+     total cpu time spent up to now is        1.5 secs
 
      Computing kpt #:    38  of    61
-     total cpu time spent up to now is        1.9 secs
+     total cpu time spent up to now is        1.5 secs
 
      Computing kpt #:    39  of    61
-     total cpu time spent up to now is        2.0 secs
+     total cpu time spent up to now is        1.5 secs
 
      Computing kpt #:    40  of    61
-     total cpu time spent up to now is        2.0 secs
+     total cpu time spent up to now is        1.5 secs
 
      Computing kpt #:    41  of    61
-     total cpu time spent up to now is        2.0 secs
+     total cpu time spent up to now is        1.6 secs
 
      Computing kpt #:    42  of    61
-     total cpu time spent up to now is        2.1 secs
+     total cpu time spent up to now is        1.6 secs
 
      Computing kpt #:    43  of    61
-     total cpu time spent up to now is        2.1 secs
+     total cpu time spent up to now is        1.6 secs
 
      Computing kpt #:    44  of    61
-     total cpu time spent up to now is        2.2 secs
+     total cpu time spent up to now is        1.7 secs
 
      Computing kpt #:    45  of    61
-     total cpu time spent up to now is        2.2 secs
+     total cpu time spent up to now is        1.7 secs
 
      Computing kpt #:    46  of    61
-     total cpu time spent up to now is        2.3 secs
+     total cpu time spent up to now is        1.7 secs
 
      Computing kpt #:    47  of    61
-     total cpu time spent up to now is        2.3 secs
+     total cpu time spent up to now is        1.8 secs
 
      Computing kpt #:    48  of    61
-     total cpu time spent up to now is        2.3 secs
+     total cpu time spent up to now is        1.8 secs
 
      Computing kpt #:    49  of    61
-     total cpu time spent up to now is        2.4 secs
+     total cpu time spent up to now is        1.8 secs
 
      Computing kpt #:    50  of    61
-     total cpu time spent up to now is        2.4 secs
+     total cpu time spent up to now is        1.8 secs
 
      Computing kpt #:    51  of    61
-     total cpu time spent up to now is        2.4 secs
+     total cpu time spent up to now is        1.9 secs
 
      Computing kpt #:    52  of    61
-     total cpu time spent up to now is        2.5 secs
+     total cpu time spent up to now is        1.9 secs
 
      Computing kpt #:    53  of    61
-     total cpu time spent up to now is        2.5 secs
+     total cpu time spent up to now is        1.9 secs
 
      Computing kpt #:    54  of    61
-     total cpu time spent up to now is        2.6 secs
+     total cpu time spent up to now is        1.9 secs
 
      Computing kpt #:    55  of    61
-     total cpu time spent up to now is        2.6 secs
+     total cpu time spent up to now is        2.0 secs
 
      Computing kpt #:    56  of    61
-     total cpu time spent up to now is        2.7 secs
+     total cpu time spent up to now is        2.0 secs
 
      Computing kpt #:    57  of    61
-     total cpu time spent up to now is        2.7 secs
+     total cpu time spent up to now is        2.0 secs
 
      Computing kpt #:    58  of    61
-     total cpu time spent up to now is        2.7 secs
+     total cpu time spent up to now is        2.1 secs
 
      Computing kpt #:    59  of    61
-     total cpu time spent up to now is        2.8 secs
+     total cpu time spent up to now is        2.1 secs
 
      Computing kpt #:    60  of    61
-     total cpu time spent up to now is        2.9 secs
+     total cpu time spent up to now is        2.2 secs
 
      Computing kpt #:    61  of    61
-     total cpu time spent up to now is        2.9 secs
+     total cpu time spent up to now is        2.2 secs
 
      ethr =  2.00E-10,  avg # of iterations = 37.3
 
-     total cpu time spent up to now is        2.9 secs
+     total cpu time spent up to now is        2.2 secs
 
      End of band structure calculation
 
@@ -1187,7 +1187,7 @@ T_2u   3.00  0.00 -1.00 -1.00  1.00 -3.00  0.00  1.00  1.00 -1.00
     -2.0136  -1.5057   3.0594   3.0750   6.8623   6.9743  15.3648  15.7364
     16.6095  17.0057
 
-          k =-0.9500 0.1500-0.0000 (   411 PWs)   bands (ev):
+          k =-0.9500 0.1500 0.0000 (   411 PWs)   bands (ev):
 
     -2.1134  -1.3665   2.9139   2.9625   7.1227   7.2782  14.6595  15.4339
     16.2740  17.1003
@@ -1197,7 +1197,7 @@ T_2u   3.00  0.00 -1.00 -1.00  1.00 -3.00  0.00  1.00  1.00 -1.00
     -2.1991  -1.2318   2.7403   2.8464   7.4661   7.6578  13.8890  15.0375
     15.9978  17.2088
 
-          k =-0.9167 0.2500 0.0000 (   411 PWs)   bands (ev):
+          k =-0.9167 0.2500-0.0000 (   411 PWs)   bands (ev):
 
     -2.2700  -1.1086   2.5558   2.7483   7.8740   8.0965  13.1025  14.5800
     15.7722  17.2685
@@ -1217,7 +1217,7 @@ T_2u   3.00  0.00 -1.00 -1.00  1.00 -3.00  0.00  1.00  1.00 -1.00
     -2.3919  -0.8800   2.0478   2.7105   9.3593   9.6283  10.8553  13.1293
     15.1980  16.8544
 
-          k =-0.8500 0.4500 0.0000 (   406 PWs)   bands (ev):
+          k =-0.8500 0.4500-0.0000 (   406 PWs)   bands (ev):
 
     -2.4029  -0.8650   1.9156   2.8059   9.8521   9.9103  10.5066  12.6663
     15.0062  16.5700
@@ -1227,7 +1227,7 @@ T_2u   3.00  0.00 -1.00 -1.00  1.00 -3.00  0.00  1.00  1.00 -1.00
     -2.3997  -0.8795   1.8086   2.9501   9.3134  10.4695  10.9867  12.2319
     14.8104  16.2397
 
-          k =-0.8167 0.5500-0.0000 (   407 PWs)   bands (ev):
+          k =-0.8167 0.5500 0.0000 (   407 PWs)   bands (ev):
 
     -2.3827  -0.9175   1.7293   3.1292   8.7025  10.9813  11.6110  11.8803
     14.6100  15.8826
@@ -1237,12 +1237,12 @@ T_2u   3.00  0.00 -1.00 -1.00  1.00 -3.00  0.00  1.00  1.00 -1.00
     -2.3529  -0.9726   1.6792   3.3216   8.1440  11.1086  11.9441  12.2690
     14.4064  15.5115
 
-          k =-0.7833 0.6500-0.0000 (   408 PWs)   bands (ev):
+          k =-0.7833 0.6500 0.0000 (   408 PWs)   bands (ev):
 
     -2.3094  -1.0387   1.6598   3.4963   7.6741  10.8145  12.4573  12.9473
     14.2058  15.1425
 
-          k =-0.7667 0.7000 0.0000 (   406 PWs)   bands (ev):
+          k =-0.7667 0.7000-0.0000 (   406 PWs)   bands (ev):
 
     -2.2532  -1.1115   1.6717   3.6108   7.3350  10.4638  13.0331  13.6257
     14.0266  14.7889
@@ -1328,55 +1328,55 @@ T_2u   3.00  0.00 -1.00 -1.00  1.00 -3.00  0.00  1.00  1.00 -1.00
     13.7246  13.8495
 
      Writing all to output data dir ./out/si.save/
- 
-     init_run     :      0.02s CPU      0.02s WALL (       1 calls)
-     electrons    :      2.69s CPU      2.75s WALL (       1 calls)
+
+     init_run     :      0.13s CPU      0.13s WALL (       1 calls)
+     electrons    :      2.01s CPU      2.03s WALL (       1 calls)
 
      Called by init_run:
      wfcinit      :      0.00s CPU      0.00s WALL (       1 calls)
      wfcinit:atom :      0.00s CPU      0.00s WALL (      61 calls)
-     wfcinit:wfcr :      0.09s CPU      0.10s WALL (      61 calls)
+     wfcinit:wfcr :      0.15s CPU      0.15s WALL (      61 calls)
      potinit      :      0.00s CPU      0.00s WALL (       1 calls)
-     hinit0       :      0.01s CPU      0.01s WALL (       1 calls)
+     hinit0       :      0.13s CPU      0.13s WALL (       1 calls)
 
      Called by electrons:
-     c_bands      :      2.69s CPU      2.75s WALL (       1 calls)
+     c_bands      :      2.01s CPU      2.03s WALL (       1 calls)
      v_of_rho     :      0.00s CPU      0.00s WALL (       1 calls)
      v_h          :      0.00s CPU      0.00s WALL (       1 calls)
      v_xc         :      0.00s CPU      0.00s WALL (       1 calls)
 
      Called by c_bands:
-     init_us_2    :      0.00s CPU      0.01s WALL (      61 calls)
-     init_us_2:cp :      0.00s CPU      0.01s WALL (      61 calls)
-     cegterg      :      2.54s CPU      2.59s WALL (     143 calls)
+     init_us_2    :      0.00s CPU      0.00s WALL (      61 calls)
+     init_us_2:cp :      0.00s CPU      0.00s WALL (      61 calls)
+     cegterg      :      1.84s CPU      1.85s WALL (     143 calls)
 
      Called by sum_band:
 
      Called by *egterg:
-     cdiaghg      :      0.25s CPU      0.26s WALL (    2336 calls)
-     cegterg:over :      0.07s CPU      0.07s WALL (    2275 calls)
-     cegterg:upda :      0.05s CPU      0.05s WALL (    2275 calls)
-     cegterg:last :      0.06s CPU      0.06s WALL (    1422 calls)
-     h_psi        :      2.14s CPU      2.19s WALL (    2479 calls)
+     cdiaghg      :      0.13s CPU      0.13s WALL (    2336 calls)
+     cegterg:over :      0.13s CPU      0.13s WALL (    2275 calls)
+     cegterg:upda :      0.08s CPU      0.08s WALL (    2275 calls)
+     cegterg:last :      0.15s CPU      0.15s WALL (    1422 calls)
+     h_psi        :      1.47s CPU      1.48s WALL (    2479 calls)
      g_psi        :      0.01s CPU      0.01s WALL (    2275 calls)
 
      Called by h_psi:
-     h_psi:calbec :      0.07s CPU      0.07s WALL (    2479 calls)
-     vloc_psi     :      1.99s CPU      2.03s WALL (    2479 calls)
-     add_vuspsi   :      0.06s CPU      0.06s WALL (    2479 calls)
+     h_psi:calbec :      0.15s CPU      0.15s WALL (    2479 calls)
+     vloc_psi     :      1.16s CPU      1.17s WALL (    2479 calls)
+     add_vuspsi   :      0.15s CPU      0.15s WALL (    2479 calls)
 
      General routines
-     calbec       :      0.07s CPU      0.07s WALL (    2479 calls)
-     fft          :      0.00s CPU      0.00s WALL (       4 calls)
-     fftw         :      1.74s CPU      1.78s WALL (   28864 calls)
-     davcio       :      0.01s CPU      0.01s WALL (     122 calls)
- 
-     Parallel routines
- 
-     PWSCF        :      2.81s CPU      2.94s WALL
+     calbec       :      0.15s CPU      0.15s WALL (    2479 calls)
+     fft          :      0.12s CPU      0.12s WALL (       4 calls)
+     fftw         :      1.01s CPU      1.02s WALL (   28864 calls)
+     davcio       :      0.00s CPU      0.00s WALL (     122 calls)
 
- 
-   This run was terminated on:  11:38:26   2Nov2022            
+     Parallel routines
+
+     PWSCF        :      2.17s CPU      2.19s WALL
+
+
+   This run was terminated on:  10:19:42   4Aug2023            
 
 =------------------------------------------------------------------------------=
    JOB DONE.
