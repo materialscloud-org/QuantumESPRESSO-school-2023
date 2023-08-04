@@ -1,0 +1,17 @@
+&CONTROL
+   prefix           = 'kc'
+   outdir           = '../out'
+   kcw_iverbosity   = 1
+   kcw_at_ks        = .true.
+   calculation      = 'ham'
+   lrpa             = .false.
+   mp1              = 1
+   mp2              = 1
+   mp3              = 1
+   assume_isolated  = 'm-t'
+   spin_component   = 1
+/
+&HAM
+   do_bands         = .false.
+   write_hr         = .true.
+/

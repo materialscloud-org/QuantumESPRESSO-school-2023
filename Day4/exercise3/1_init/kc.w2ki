@@ -1,0 +1,13 @@
+
+ &CONTROL
+    prefix           = 'kc'
+    outdir           = '../out'
+    kcw_iverbosity   = 1
+    kcw_at_ks        = .true.
+    calculation      = 'wann2kcw'
+    mp1              = 1
+    mp2              = 1
+    mp3              = 1
+    assume_isolated  = 'm-t'
+    spin_component   = 1
+ /
