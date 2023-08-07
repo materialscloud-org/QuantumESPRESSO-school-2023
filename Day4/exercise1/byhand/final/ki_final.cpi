@@ -6,7 +6,7 @@
    outdir           = '../TMP-CP/'
    prefix           = 'kc'
    disk_io          = 'high'
-   pseudo_dir       = '/home/nicola/CODES/koopmans/src/koopmans/pseudopotentials/sg15_v1.2/pbe/'
+   pseudo_dir       = '/home/max/koopmans/src/koopmans/pseudopotentials/sg15_v1.2/pbe/'
    ndr              = 50
    ndw              = 53
 /
@@ -37,7 +37,7 @@
    which_compensation = 'tcc'
 /
 &NKSIC
-   nkscalfact = XXX
+   nkscalfact = 0.7850
    do_innerloop     = .false.
    which_orbdep     = 'nki'
    esic_conv_thr    = 1.8000000000000002e-08

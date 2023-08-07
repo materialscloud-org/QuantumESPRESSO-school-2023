@@ -6,7 +6,7 @@
    outdir           = '../TMP-CP/'
    prefix           = 'kc'
    disk_io          = 'high'
-   pseudo_dir       = '/home/nicola/CODES/koopmans/src/koopmans/pseudopotentials/sg15_v1.2/pbe/'
+   pseudo_dir       = '/home/max/koopmans/src/koopmans/pseudopotentials/sg15_v1.2/pbe/'
    ndr              = 51
    ndw              = 51
 /

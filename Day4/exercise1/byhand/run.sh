@@ -8,6 +8,6 @@ cd ../calc_alpha
 echo "  calc alpha      ..."
 sh run.sh
 cd ../
-cd final
-echo "  KI final        ..."
-sh run.sh
+#cd final
+#echo "  KI final        ..."
+#sh run.sh
