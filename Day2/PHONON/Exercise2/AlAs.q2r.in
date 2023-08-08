@@ -1,0 +1,5 @@
+ &input
+   fildyn='AlAs.dyn',        ! Specify fildyn name the same as in ph.AlAs.in
+   zasr='simple', 
+   flfrc='AlAs444.fc'
+ /
