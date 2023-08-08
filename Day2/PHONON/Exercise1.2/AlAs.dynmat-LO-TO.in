@@ -1,0 +1,14 @@
+ &input
+    fildyn = 'AlAs.dyn',
+    asr='simple',  
+    amass(1)=26.98,
+    amass(2)=74.92
+    filout = 'AlAs-dynmatLOTO.out'
+    fileig = 'AlAs-dynmatLOTO.modes'
+    filmol = 'AlAs-dynmatLOTO.mold'
+    filxsf = 'AlAs-dynmatLOTO.xsf' 
+    !lperm = .true. 
+    q(1) = 1.0, 
+    q(2) = 0.0, 
+    q(3) = 0.0 
+ /

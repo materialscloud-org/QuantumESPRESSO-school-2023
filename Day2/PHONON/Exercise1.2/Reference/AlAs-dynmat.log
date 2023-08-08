@@ -1,0 +1,71 @@
+--------------------------------------------------------------------------
+[[9490,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: qmobile
+
+Another transport will be used instead, although this may result in
+lower performance.
+
+NOTE: You can disable this warning by setting the MCA parameter
+btl_base_warn_component_unused to 0.
+--------------------------------------------------------------------------
+
+     Program DYNMAT v.7.2 starts on  9Aug2023 at  0:34:51 
+
+     This program is part of the open-source Quantum ESPRESSO suite
+     for quantum simulation of materials; please cite
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 21 395502 (2009);
+         "P. Giannozzi et al., J. Phys.:Condens. Matter 29 465901 (2017);
+         "P. Giannozzi et al., J. Chem. Phys. 152 154105 (2020);
+          URL http://www.quantum-espresso.org", 
+     in publications or presentations arising from this work. More details at
+     http://www.quantum-espresso.org/quote
+
+     Parallel version (MPI), running on     1 processors
+
+     MPI processes distributed on     1 nodes
+     309 MiB available memory on the printing compute node when the environment starts
+
+
+     Reading Dynamical Matrix from file AlAs.dyn
+     ...Force constants read
+     ...epsilon and Z* read
+     A direction for q was not specified:TO-LO splitting will be absent
+
+     Polarizability (A^3 units)
+     multiply by 0.263706 for Clausius-Mossotti correction
+        28.586102    0.000000    0.000000
+         0.000000   28.586102   -0.000000
+         0.000000    0.000000   28.586102
+
+     IR activities are in (D/A)^2/amu units
+
+# mode   [cm-1]    [THz]      IR
+    1     -0.00   -0.0000    0.0000
+    2     -0.00   -0.0000    0.0000
+    3     -0.00   -0.0000    0.0000
+    4    374.23   11.2190    5.3758
+    5    374.23   11.2190    5.3758
+    6    374.23   11.2190    5.3758
+
+Electronic dielectric permittivity tensor (relative, adimensional)
+         9.376325    0.000000    0.000000
+         0.000000    9.376325   -0.000000
+         0.000000    0.000000    9.376325
+
+ ... with zone-center polar mode contributions
+        11.285370    0.000000    0.000000
+         0.000000   11.285370    0.000000
+         0.000000    0.000000   11.285370
+
+
+     DYNMAT       :      0.00s CPU      0.01s WALL
+
+
+   This run was terminated on:   0:34:51   9Aug2023            
+
+=------------------------------------------------------------------------------=
+   JOB DONE.
+=------------------------------------------------------------------------------=

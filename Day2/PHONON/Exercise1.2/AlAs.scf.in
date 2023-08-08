@@ -1,0 +1,26 @@
+ &control
+    calculation='scf'
+    restart_mode='from_scratch',
+    pseudo_dir='../../../files/pseudo'
+    outdir='./tmp'
+    prefix='AlAs',
+ /
+ &system    
+    ibrav = 2, 
+    celldm(1) = 10.50, 
+    nat = 2, 
+    ntyp = 2,
+    ecutwfc = 16
+ /
+ &electrons
+    conv_thr =  1.0d-8
+    mixing_beta = 0.7
+ /
+ATOMIC_SPECIES
+ Al  26.98  Al.pz-vbc.UPF
+ As  74.92  As.pz-bhs.UPF
+ATOMIC_POSITIONS
+ Al 0.00 0.00 0.00
+ As 0.25 0.25 0.25
+K_POINTS automatic
+ 8 8 8 0 0 0 

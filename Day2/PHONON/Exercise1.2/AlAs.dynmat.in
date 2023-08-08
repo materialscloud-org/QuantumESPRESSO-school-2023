@@ -1,0 +1,14 @@
+ &input
+    fildyn = 'AlAs.dyn',
+    asr='simple',  
+    amass(1)=26.98,
+    amass(2)=74.92
+    filout = 'AlAs-dynmat.out'
+    fileig = 'AlAs-dynmat.modes'
+    filmol = 'AlAs-dynmat.mold'
+    filxsf = 'AlAs-dynmat.xsf' 
+    lperm = .true. 
+    q(1) = 0.0, 
+    q(2) = 0.0, 
+    q(3) = 0.0 
+ /
