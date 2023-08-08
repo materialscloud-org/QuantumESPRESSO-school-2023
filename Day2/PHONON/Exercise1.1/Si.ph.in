@@ -1,0 +1,10 @@
+Phonons at Gamma
+ &inputph
+  prefix = 'Si',
+  tr2_ph = 1.0d-14,
+  amass(1) = 28.0855,
+  epsil = .true.
+  outdir = './tmp'
+  fildyn = 'Si.dyn',
+ /
+ 0.0  0.0  0.0

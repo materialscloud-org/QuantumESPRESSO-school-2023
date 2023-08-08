@@ -1,0 +1,10 @@
+&input
+  fildyn = 'Si.dyn',
+  lperm = .true.
+  asr = 'simple'
+  filout = 'Si-dynmat.out'
+  fileig = 'Si-dynmat.eig' 
+  filmol = 'Si-dynmat.mold'
+  filxsf = 'Si-dynmat.xsf' 
+ /
+
