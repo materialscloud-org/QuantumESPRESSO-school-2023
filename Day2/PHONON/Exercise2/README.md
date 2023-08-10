@@ -6,22 +6,34 @@
 
 1. Run the SCF ground-state calculation
 
-        mpirun -np 4 pw.x < AlAs.scf.in > AlAs.scf.out
+        `mpirun -np 2 pw.x < AlAs.scf.in > AlAs.scf.out`
 
 2. Run the phonon calculation on a uniform grid of q-points
 
-        mpirun -np 4 ph.x < AlAs.ph.in > AlAs.ph.out
+        `mpirun -np 2  ph.x < AlAs.ph.in > AlAs.ph.out`
 
-3. Fourier transform the Interatomic Force Constants from a uniform grid of q-points to real space: C(q) => C(R)
+3. Compute the Interatomic Force Constants using q2r.x  
 
-        mpirun -np 4 q2r.x < AlAs.q2r.in > AlAs.q2r.out
+        `q2r.x < AlAs.q2r.in > AlAs.q2r.out`
 
-4. Calculate frequencies omega(q') at generic q' points using Interatomic Force Constants C(R)
+4. Use the IFC to compute the dynamical matrices at generic `q` points:
 
-        mpirun -np 4 matdyn.x < AlAs.matdyn.in > AlAs.matdyn.out
+    4.1 Compute the phonon dispersion along high symmetry directions of the BZ:
 
-5. Plot the phonon dispersion of silicon 
+        `matdyn.x < AlAs.matdyn.in > AlAs.matdyn.out`
 
-        plotband.x < plotband.AlAs.in > plotband.AlAs.out
+    4.2 Compute the phonon energies on a denser k point mesh and compute the vibrational density of states. 
+
+5. Plot the phonon dispersion and VDOS of AlAs
+
+    5.1 Use plotband to extract information needed for the plot: 
+
+        `plotband.x < plotband.AlAs.in > plotband.AlAs.out`
+
+    5.2  Example1 gnuplot script for plotting phonon dispersion:
+
         gnuplot plot_dispersion.gp
-        atril phonon_dispersion.eps 
+        evince  phonon_dispersion.eps 
+
+    5.3 Example2 python script for plotting the dispersion and the VDOS with matplotlib
+   

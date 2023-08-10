@@ -1,0 +1,14 @@
+ &input
+    asr = 'simple'            
+    dos = .true. 
+    deltaE = 1.0
+    flfrc='AlAs444.fc',           
+    nk1 = 8 
+    nk2 = 8 
+    nk3 = 8
+    flfrq = 'AlAs_dos.freq'
+    flvec = 'AlAS_dos.modes'
+    fleig = 'AlAS_dos.eig'
+    fldos = 'AlAs.vdos'
+ /
+

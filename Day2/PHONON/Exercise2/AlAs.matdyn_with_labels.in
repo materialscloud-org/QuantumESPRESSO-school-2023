@@ -1,0 +1,15 @@
+ &input
+    asr = 'simple'            
+    q_in_band_form = .true. 
+    flfrc='AlAs444.fc',           
+    flfrq='AlAs_dispersion.freq'
+    point_label_type = 'SC'
+    
+ /
+ 6
+   gG 18
+   K  22
+   W  17
+   X  34
+   gG 29
+   L  1

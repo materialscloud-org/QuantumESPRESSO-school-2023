@@ -1,14 +1,13 @@
  &input
-    asr = 'simple'            ! Specify the Acoustic Sum Rule
-    !amass(1) =           ! Specify atomic mass of Al
-    !amass(2) =          ! Specify atomic mass of As
+    asr = 'simple'            
     q_in_band_form = .true. 
-    flfrc='AlAs444.fc',           ! specify the file name for interatomic force constant 
-    flfrq='AlAs.freq'
+    flfrc='AlAs444.fc',           
+    flfrq='AlAs_dispersion.freq'
  /
- 5
-   0.000000    0.000000    0.000000 20
-   0.000000    1.000000    0.000000 20
-   1.000000    1.000000    0.000000 35
-   0.000000    0.000000    0.000000 35
-   0.500000    0.500000    0.500000 1
+ 6
+   0.000000    0.000000    0.000000 18
+   0.75        0.75        0.000000 22
+   0.5000      1.00000     0.000000 17
+   0.000000    1.000000    0.000000 34
+   0.000000    0.000000    0.000000 29
+   0.500000    0.500000    0.500000  1

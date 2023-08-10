@@ -3,8 +3,6 @@ Phonons on a uniform q-grid
   prefix='AlAs',           ! Specify a prefix (it has to be the same as in pw.AlAs.in)
   tr2_ph = 1.0d-14,
   recover = .true.
-  !amass(1) =             ! Specify atomic mass of Al
-  !amass(2) =             ! Specify atomic mass of As
   ldisp = .true.,
   nq1 =  4               ! Specify a uniform q-grid
   nq2 =  4
