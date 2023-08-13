@@ -21,7 +21,7 @@ SPECIAL_POINTS = {"G": [0,0,0],
 
 # The two dynamical matrix to be compared
 HARM_DYN = 'AgDyn'
-SSCHA_DYN = 'relaxed_300_'
+SSCHA_DYN = 'AgDyn' #'relaxed_300_'
 
 # The number of irreducible q points
 # i.e., the number of files in which the phonons are stored
