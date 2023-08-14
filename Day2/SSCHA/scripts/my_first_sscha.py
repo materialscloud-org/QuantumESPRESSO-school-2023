@@ -23,7 +23,7 @@ ensemble.compute_ensemble(calculator = EMT(),
 
 # Run SSCHA
 minim = sscha.SchaMinimizer.SSCHA_Minimizer(ensemble)
-minim.meaningful_factor = 0.001
+minim.meaningful_factor = 0.0004
 
 # Setup utilities
 ioinfo = sscha.Utilities.IOInfo()

@@ -5,10 +5,10 @@ import sscha
 import sscha.Ensemble, sscha.SchaMinimizer, sscha.Utilities
 import sscha.Relax
 
-TEMPERATURE=400
+TEMPERATURE=300
 N_CONFIGS=100
 
-dyn = CC.Phonons.Phonons("relaxed_300_", nqirr=13)
+dyn = CC.Phonons.Phonons("final_sscha_300_", nqirr=13)
 
 # Impose all phonons to be real
 dyn.ForcePositiveDefinite()
@@ -21,20 +21,20 @@ minim.meaningful_factor = 0.001
 
 # Setup utilities
 ioinfo = sscha.Utilities.IOInfo()
-ioinfo.SetupSaving("minimization_400")
+ioinfo.SetupSaving("minimization_300")
 
 # setup the automatic relax
 relax = sscha.Relax.SSCHA(
         minim,
         ase_calculator = EMT(),
         N_configs=N_CONFIGS,
-        max_pop=3)
+        max_pop=4)
 
 relax.setup_custom_functions(custom_function_post=ioinfo.CFP_SaveAll)
 
 relax.vc_relax(target_press=0,  # GPa
         static_bulk_modulus=100)
 
-relax.minim.dyn.save_qe("relaxed_400_")
+relax.minim.dyn.save_qe("relaxed_300_")
 
 
