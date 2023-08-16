@@ -1,0 +1,56 @@
+
+\DeclareMathOperator{\sign}{sign}
+
+% colors
+\definecolor{DarkRed}{rgb}{0.5,0.0,0.0}
+\definecolor{DarkBlue}{rgb}{0.0,0.0,0.35}
+\definecolor{DarkGreen}{rgb}{0.0,0.6,0.00}
+\definecolor{Orange}{rgb}{0.70,0.30,0.0}
+\definecolor{Magenta}{rgb}{0.8,0.0,0.8}
+\definecolor{DarkGray}{rgb}{0.3,0.3,0.3}
+\definecolor{burgundy}{rgb}{0.667,0.110,0.094}
+\def\burgundy{\color{burgundy}}
+\def\red{\color{red}} 
+\def\darkred{\color{DarkRed}} 
+\def\blue{\color{DarkBlue}} 
+\def\green{\color{DarkGreen}} 
+\def\orange{\color{Orange}}
+\def\magenta{\color{Magenta}}
+\def\black{\color{black}}
+\def\gray{\color{DarkGray}}
+
+% sizes, footer and headers
+\textwidth = 26truecm
+\textheight = 18truecm
+\topmargin =-2 cm
+\oddsidemargin -1.5cm
+\rightfooter{}
+%
+\def\indent{\hspace*{1cm}}
+\def\prompt{\texttt{\$~}}
+\def\prompt{{\footnotesize $\bullet$}~}
+\def\exec#1{\indent\prompt\code{#1}}
+\def\codeline#1{\indent\code{#1}}
+\parindent 0pt
+
+% alias for slides header
+\def\Head#1{\foilhead{\burgundy #1 \vskip -1cm} \medskip\hrule\medskip}
+\def\head#1{\foilhead{\burgundy #1 \vskip -1cm}}
+
+% aliases for codes, files, namelists, etc.
+\def\codecolor{\green}
+\def\cardcolor{\orange}
+\def\code#1{\texttt{\codecolor #1}}
+\def\prog#1{\texttt{\burgundy #1}}
+\def\var#1{\texttt{\burgundy #1}}
+\def\file#1{\texttt{\green #1}}
+\def\cmd#1{\texttt{\green #1}}
+\def\nml#1{\texttt{\magenta #1}}
+\def\card#1{\texttt{\cardcolor #1}}
+\def\flag#1{\texttt{\green #1}}
+
+% aliases for math
+\def\vr{\ensuremath{\bm{r}}}
+\def\vR{\ensuremath{\bm{R}}}
+\def\vk{\ensuremath{\bm{k}}}
+\def\vtau{\ensuremath{\bm{\tau}}}
