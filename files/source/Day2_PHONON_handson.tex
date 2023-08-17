@@ -121,7 +121,7 @@ Hands-on material for these exercises is in \\ \file{/home/max/QuantumESPRESSO-s
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \head{Reminder of conditions and definitions}
 \begin {itemize}
-\item Monochromatic waves. 
+\item Monochromatic displaclemt patterns . 
 	\begin{itemize}
 		\item For infinite periodic systems it is necessary to decompose the dynamics into separate finite monochromatic modes: 
 			$$ \tilde{\mathrm{\mathbf{u}}}(\mathbf{q}) i\cdot e^{i\mathbf{q}\cdot\mathbf{r}}$$ 	
@@ -161,10 +161,10 @@ We start computing the dynamical matrices and dielectric properties of fcc-Si
 	\includegraphics[width=14cm]{../pictures/fcc-Si.png}
 \end{center}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{Input of \prog{ph.x}}
+\head{Exercise1.1 input}
 \parbox{17cm}{
 	\begin{itemize}
-	\item \prog{ph.x} is quite simple with only one namelist \var{\&inputph}
+	\item \prog{ph.x} has only one namelist \var{\&inputph}
 	\item \var{prefix} and \var{tmp} must match those used by \prog{pw.x} for the scf calculation. 
 	\item \var{tr2\_ph} defines the convergence threshold for the self consistent solution of the Sternheimer equations. 
 	\item \var{epsilon} asks the program to compute the Electric Field perturbation as well 
@@ -186,149 +186,213 @@ We start computing the dynamical matrices and dielectric properties of fcc-Si
     / \\
    0.0  0.0  0.0}
 }
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{1. How to calculate and plot molecular orbitals}
-\rightfooter{Example: \file{Day-1/example1.benzene/}}
-
-To plot signed molecular-orbital densities
-($\sign(\psi_i(\vr))|\psi_i(\vr)|^2$), we need to:
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise1.1 output} 
+\prog{ph.x} writes types of output:
 \begin{itemize}
-\item calculate Kohn-Sham states with \prog{pw.x} (i.e. make an
-  SCF calculation)
-\item instruct \prog{pp.x} to write them in a suitable format to
-  specified files
-\item plot orbitals with \prog{xcrysden}
+	\item Standard output (\file{Si.phG.out}) with logging info and summary of the main results of the calculation. 
+	\item Files with dynamical matrices (\file{Sy.dyn}) 
+	\item Detailed data for recover and post-processing in \file{tmp/\_ph0/Si.phsave} directory. 
 \end{itemize}
-See \file{README.md} for detailed instructions.
-\vspace{-4cm}
-\begin{flushright}
-  \includegraphics[width=10cm]{figs/psi2-benzene.png}  
-\end{flushright}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\head{1. How to plot molecular orbitals with xcrysden}
-\rightfooter{Example: \file{Day-1/example1.benzene/}}
-
-\vspace{-0.5em}
-\begin{itemize}
-\item Execute in the terminal:\\[0.5em]
-  %
-  \exec{pw.x < pw.benzene.scf.in > pw.benzene.scf.out}\\
-  \exec{pp.x < pp.benzene.scf.in > pp.benzene.scf.out}\\[0.5em]
-  % 
-  {\small The resulting molecular orbitals (i.e., $\sign(\psi(\vr))|\psi(\vr)|^2$) are
-  written to \file{psi2.benzene\_*.xsf}}
-
-  \vspace{-0.5em}
-\item Plot one of the generated XSF files with \prog{xcrysden},
-  e.g.:\\[0.5em]
-  % 
-  \exec{xcrysden --xsf psi2.benzene\_K001\_B006.xsf}\\[0.5em]
-  %
-  and follow these instructions:
-  \vspace{-0.5em}
-  {\small
-    \begin{itemize}
-    \item use the menu \file{Tools-->Data Grid}; a new window opens, press \file{[OK]}
-    \item an isosurface-control window appear; specify the \file{Isovalue},
-      say \file{0.005} and press \file{[Submit]}
-    \item click the \file{Render +/- isovalue} radiobutton and again
-      press \file{[Submit]}
-    \item rotate and zoom the structure according to your preference
-    \item save the displayed {\em state} via the menu
-      \file{File-->Save Current State}\\
-      (e.g., save to \file{my-display.xcrysden})
-    \item try this with other orbitals, e.g.:\\[0.3em]
-      {\small \exec{xcrysden --xsf psi2.benzene\_K001\_B005.xsf --script
-          my-display.xcrysden}}
-    \end{itemize}
-  }
-  \vspace{-0.5em}
-\item To plot all orbitals, execute: ~\code{./plot-psi2.sh}
-\end{itemize}
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{2. How to calculate a 2D-periodic system: graphene}
-\rightfooter{Example: \file{Day-1/example2.graphene/}}
-%
-\parbox{17cm}{A 2D-periodic system (e.g., a graphene sheet) is
-  modelled by adding a vacuum layer in the 3rd direction.\\[-0.5em]
-
-  $\bullet$ move to \file{Day-1/example2.graphene/} directory\\[-0.5em]
-  
-  $\bullet$ look at the input file \file{pw.graphene.scf.in};
-  graphene has a 2-atom hexagonal unit cell in the $xy$ plane:
-  \var{ibrav=4}, \var{celldm(1)=4.654},\\
-  \var{celldm(3)=}\textit{some suitably large value, e.g.} \var{3.0};
-}
-\hfill \parbox{8cm}{
-  \includegraphics[width=8cm]{figs/graphene.png}\\
-}
-
-{\small (remember: \var{celldm(1)} in Bohr radii, \var{celldm(3)=c/a};
-  alternatively: \var{A=2.463}, \var{C=7.388} in \AA)}
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise1.1 results}
+Inspecting the content of \file{Si.phG.out} we find: \\
 \parbox{12cm}{
-  $\bullet$  atomic positions:\\
-\card{
-ATOMIC\_POSITIONS (alat)\\
-C    0.000000    0.000000    0.000000\\
-C    0.000000    0.5773503   0.000000}
+\begin{itemize}
+	\item {Symmetry analysys of the system, wavevector and summary of the perturnations that will be computed}
+	\item {\shade log of the Self Consistent calculation of the density responses for each perturbation} 
+	\item {\shade Summary of the general results}
+\end{itemize}
+}
+\hskip 2cm  
+\parbox{12cm}{
+\includegraphics[width=11cm]{../pictures/Summary_simmetry_and_modes.png} 
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise1.1 results}
+Inspecting the content of \file{Si.phG.out} we find: \\
+\parbox{12cm}{
+\begin{itemize}
+	\item {\shade Symmetry analysys of the system, wavevector and summary of the perturnations that will be computed}
+	\item {log of the Self Consistent calculation of the density responses for each perturbation} 
+	\item {\shade Summary of the general results}
+\end{itemize}
+}
+\hskip 2cm  
+\parbox{12cm}{
+\includegraphics[width=11cm]{../pictures/SCF_log.png}  
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise1.1 results}
+Inspecting the content of \file{Si.phG.out} we find: \\
+\parbox{12cm}{
+\begin{itemize}
+	\item {\shade Symmetry analysys of the system, wavevector and summary of the perturnations that will be computed}
+	\item {\shade log of the Self Consistent calculation of the density responses for each perturbation} 
+	\item {Summary of the general results}
+\end{itemize}
+}
+\hskip 2cm  
+\parbox{12cm}{
+\includegraphics[width=12cm]{../pictures/summary_Si_phG.png} 
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise1.1 results}
+\begin{itemize}
+\item The acustic sum rules for the rigid translations and for the Born Charges are not exaclty fullfilled. In the  next step we will see that 
+	(if the deviation is small) we can correct them on the post-processing phase. It is also possible to obtain smaller deviation improving 
+		the convergence of our ground state and perturbative calculations. 
+	%\item {Rigid translation energies:
+	%\begin{itemize}
+	%	\item Use tighter thresholds for both \prog{pw.x} and \prog{ph.x} steps: set \var{conv\_thr} to 1.d-13 
+	%		in \file{Si.scf.in} and \var{tr2\_ph} to 1.d-26 
+	%		in \file{Si.phG.in} and repeat the calculation. 
+	%	\item Use a finer FFT mesh increasing the cutoff: compare results with \var{ecutwfc} set to 30 40 and 50 Ry respectively.  
+	%\end{itemize}
+	%	}
+	%\item {\hide Electric field perturbation is more sensitive to convergence w.r.t. the  k-point mesh used. In our case deviation from the
+	%	ASR is significant, which usually means that also the dielectric tensor is inaccurate. Try to see what happens improving the k-point 
+	%	sampling. 
+	%	}
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise1.1 results}
+\begin{itemize}
+\item The acustic sum rules for the rigid translations and for the Born Charges are not exaclty fullfilled. In the  next step we will see that 
+	(if the deviation is small) we can correct them on the post-processing phase. It is also possible to obtain smaller deviation improving 
+		the convergence of our ground state and perturbative calculations. 
+	\item {Rigid translation energies:
+	\begin{itemize}
+		\item Use tighter thresholds for both \prog{pw.x} and \prog{ph.x} steps: set \var{conv\_thr} to 1.d-13 
+			in \file{Si.scf.in} and \var{tr2\_ph} to 1.d-26 
+			in \file{Si.phG.in} and repeat the calculation. 
+		\item Use a finer FFT mesh increasing the cutoff: compare results with \var{ecutwfc} set to 30 40 and 50 Ry respectively.  
+	\end{itemize}
+		}
+	%\item {\hide Electric field perturbation is more sensitive to convergence w.r.t. the  k-point mesh used. In our case deviation from the
+	%	ASR is significant, which usually means that also the dielectric tensor is inaccurate. Try to see what happens improving the k-point 
+	%	sampling. 
+	%	}
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise1.1 results}
+\begin{itemize}
+
+\item The acustic sum rules for the rigid translations and for the Born Charges are not exaclty fullfilled. In the  next step we will see that 
+	(if the deviation is small) we can correct them on the post-processing phase. It is also possible to obtain smaller deviation improving 
+		the convergence of our ground state and perturbative calculations. 
+	\item {Rigid translation energies:
+	\begin{itemize}
+		\item Use tighter thresholds for both \prog{pw.x} and \prog{ph.x} steps: set \var{conv\_thr} to 1.d-13 
+			in \file{Si.scf.in} and \var{tr2\_ph} to 1.d-26 
+			in \file{Si.phG.in} and repeat the calculation. 
+		\item Use a finer FFT mesh increasing the cutoff: compare results with \var{ecutwfc} set to 30 40 and 50 Ry respectively.  
+	\end{itemize}
+		}
+	\item {Electric field perturbation is more sensitive to convergence w.r.t. the  k-point mesh used. In our case deviation from the
+		ASR is significant, which usually means that also the dielectric tensor is inaccurate. Try to see what happens improving the k-point 
+		sampling. 
+		}
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise1.1: postprocessing with \prog{dynmat.x}} 
+We now use \prog{dynmat.x} to refine our analysis. \\[0.05 em]
+%\vskip 0.05 em
+\exec{dynmat.x -i Si.dynmat.in > Si.dynmat.log} \\[0.05 em]
+%\vskip 0.05 em
+\parbox{16cm}{
+\begin{itemize} 
+	\item \var{fildyn} is used to indicate where the program finds the Dynamical matrix data, we put the name of the file just printed by \prog{ph.x}
+	\item \var{asr} selects if enforcing  the ASR and how. 
+	\item \var{lperm} is true if we want to printout the  dielectric tensor (electronic and ionic part) 
+	\item \var{filout}, \var{filxsf}, etc. select the filename for saving displacements and frequencies in various formats. 
+\end{itemize}
+}
+\hskip 2cm 
+\parbox{8cm}{\small
+	\card{
+      \&input \\
+      fildyn = 'Si.dyn',\\
+      lperm = .true.\\
+      asr = 'simple'\\
+      filout = 'Si-dynmat.out'\\
+      fileig = 'Si-dynmat.eig'\\
+      filmol = 'Si-dynmat.mold'\\
+      filxsf = 'Si-dynmat.xsf'\\
+     /
+	}\\
+     \vskip 1.0em
+     \includegraphics[width=3cm]{../pictures/Si-acustic.png} 
+     \hskip 2em
+     \includegraphics[width=3cm]{../pictures/Si-irrep2.png}
+     }
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise1.2: AlAs Zone Center modes}
+We now do the same exercise for fcc-AlAs: 
+\begin{itemize}
+	\item go to the working directory \\[0.5 em]
+	 \exec{cd Day2/PHONON/Exercise1.2}
+ \item run in sequence \prog{pw.x}, \prog{ph.x}, and \prog{dynmat.x} as in the previous exercise:\\[0.5 em] 
+	\exec{mpirun -np 2 pw.x -i AlAs.scf.in > AlAs.scf.out}
+	\exec{mpirun -np 2 ph.x -i AlAs.phG.in > AlAs.phG.out}
+	\exec{dynmat.x -i AlAs.dynmat.in > AlAs.dynmat.log} 
+\item Now let us inspect files \file{AlAs.dyn} and \file{AlAs.dynmat.log} 
+\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\head{Exercise1.2: Results} 
+\parbox{16cm}{
+	\begin{itemize}
+	  \item Inspecting the dielectric tensors in \file{AlAs.dyn} we find that Born charges are now finite with 
+		  a value of $\sim$ 2.15 for Al and -2.15 for As 
+	  \item {\shade From \prog{\shade dynmat.x} output (\file{\shade AlAs.dynmat.log}) we find the 3 optical modes are Infrared active and they give a sizeable 
+		  contribution to the static dielectric constant tensor.} 
+	  \item {\shade The dielectric tensor mantains the cubic symmetry because the 3 optical modes for a degenerate triplet with mutually orthogonal
+		  dipole directions.} 
+	\end{itemize}
 }
 \hskip 2cm
-\parbox{12cm}{
-  or, equivalently:\\
-  \card{
-    ATOMIC\_POSITIONS (crystal)\\
-    C    0.000000    0.000000   0.000000\\
-    C    0.333333    0.666667   0.000000}
-}\\
+\parbox{8cm}{
+	\includegraphics[width=8cm]{../pictures/AsAl_Born_charges.png}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise1.2: Results} 
+\parbox{16cm}{
+	\begin{itemize}
+		\item {\shade Inspecting the dielectric tensors in \file{\shade AlAs.dyn} we find that Born charges are now finite with 
+			a value of $\sim$ 2.15 for Al and -2.15 for As} 
+	  \item {From \prog{dynmat.x} output (\file{AlAs.dynmat.log}) we find the 3 optical modes are Infrared active and they give a sizeable 
+		  contribution to the static dielectric constant tensor.} 
+	  \item {\shade The dielectric tensor mantains the cubic symmetry because the 3 optical modes for a degenerate triplet with mutually orthogonal
+		  dipole directions.} 
+	\end{itemize}
+}
+\hskip 2cm
+\parbox{8cm}{
+	\includegraphics[width=8cm]{../pictures/polar_modes_AlAs.png}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise1.2: Results} 
+\parbox{16cm}{
+	\begin{itemize}
+		\item {\shade Inspecting the dielectric tensors in \file{\shade AlAs.dyn} we find that Born charges are now finite with 
+			a value of $\sim$ 2.15 for Al and -2.15 for As} 
+	  \item {From \prog{dynmat.x} output (\file{AlAs.dynmat.log}) we find the 3 optical modes are Infrared active and they give a sizeable 
+		  contribution to the static dielectric constant tensor.} 
+	  \item {The dielectric tensor mantains the cubic symmetry because the 3 optical modes for a degenerate triplet with mutually orthogonal
+		  dipole directions.} 
+	\end{itemize}
+}
+\hskip 2cm
+\parbox{8cm}{
+	\includegraphics[width=8cm]{../pictures/polar_modes_AlAs.png}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-$\bullet$ k-points: use a dense grid in the $xy$ plane only, e.g.\\
-\card{
-K\_POINTS (automatic)\\
-9 9 1 0 0 0}\\
-(a uniform 9$\times$9$\times$1 grid, centered on ${\bf k}=(0,0,0)$ )
 
-%$\bullet$ instructions for how to run the example are in \file{README.md}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{2. Graphene: DOS and bands (spaghetti)}
-
-\begin{itemize}
-\item DOS is typically calculated by a \prog{pw.x} SCF calculation
-  followed by a \prog{pw.x} non-SCF calculation (\var{calculation =
-    'nscf'}) with a denser k-point grid, and finally using
-  \prog{dos.x} post-processing code.
-
-\item to calculate the bands (spaghetti plot), the \prog{pw.x} SCF
-  calculation is followed by a \prog{pw.x} ``bands''-type non-SCF
-  calculation (\var{calculation = 'bands'}), for which we need a
-  suitable path of k-points. The most difficult (?) part is to figure
-  out a suitable path of k-points.
-
-  You may either use the ``k-path selection'' tool of \prog{xcrysden}
-  or the \prog{SeeK-path} web site at
-  \file{http://materialscloud.org/tools/seekpath}.
-
-\item instructions for how to calculate DOS and bands are in \file{README.md}
-\end{itemize}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{K-path selection tool of xcrysden}
-~\\[-1.5em]
-\centerline{\includegraphics[width=25cm]{figs/xc-k-path.png}}
-{\small ({\bf important:} to save k-path in Quantum ESPRESSO format, explicitly
-specify the \file{*.pwscf} extension)}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\head{SeeK-path @ http://materialscloud.org/tools/seekpath}
-~\\
-\centerline{\includegraphics[width=24cm]{figs/seekpath.pdf}}
 \end{document}
 
 %%% Local Variables:
