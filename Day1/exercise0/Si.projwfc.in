@@ -1,0 +1,10 @@
+&projwfc
+    prefix = 'si'
+    outdir = './out'
+    kresolveddos = .true.
+    ngauss  = 0       !! Gaussian broadening
+    degauss = 0.07348 !! Ry
+    deltae  = 0.05    !! eV
+    lsym = .false.
+    filproj = 'si_bands_pbe'
+/
