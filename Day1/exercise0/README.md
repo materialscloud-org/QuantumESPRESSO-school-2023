@@ -9,7 +9,7 @@ bands.x < bands.in | tee bands.out
 gnuplot plot_bands.gnu 
 
 
-# For projected band structure:
+## For projected band structure:
 
 projwfc.x < Si.projwfc.in | tee Si.projwfc.out
 
