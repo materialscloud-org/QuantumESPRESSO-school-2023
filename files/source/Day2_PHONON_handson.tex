@@ -337,9 +337,9 @@ We now do the same exercise for fcc-AlAs:
 	\item go to the working directory \\[0.5 em]
 	 \exec{cd Day2/PHONON/Exercise1.2}
  \item run in sequence \prog{pw.x}, \prog{ph.x}, and \prog{dynmat.x} as in the previous exercise:\\[0.5 em] 
-	\exec{mpirun -np 2 pw.x -i AlAs.scf.in > AlAs.scf.out}
-	\exec{mpirun -np 2 ph.x -i AlAs.phG.in > AlAs.phG.out}
-	\exec{dynmat.x -i AlAs.dynmat.in > AlAs.dynmat.log} 
+	\exec{mpirun -np 2 pw.x -i AlAs.scf.in > AlAs.scf.out}\\
+	\exec{mpirun -np 2 ph.x -i AlAs.phG.in > AlAs.phG.out}\\
+	\exec{dynmat.x -i AlAs.dynmat.in > AlAs.dynmat.log} \\
 \item Now let us inspect files \file{AlAs.dyn} and \file{AlAs.dynmat.log} 
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -391,6 +391,244 @@ We now do the same exercise for fcc-AlAs:
 	\includegraphics[width=8cm]{../pictures/polar_modes_AlAs.png}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise1.2: evaluate the LO-TO splitting} 
+(\small We now use \prog{dynmat.x} and the data in $\Gamma$ dynamical matrix to  estimate
+the long wave limit of the the IR active phonons. We use the modified input \file{AlAs.dynmat-LO-TO.in}:\\[0.5em]
+\exec{dynmat.x -i AlAs.dynmat-LO-TO.in > AlAs-dynmat-LO-TO.log}\\[3.5em]
+\parbox{13cm}{\small
+	\begin{itemize}
+		\item To evaluate the splitting we need to specify a direction with 
+			\var{q(1}, \var{q(2)}, and \var{q(3)}. 
+		\item  In this case any direction is equivalent, the LO mode has a dipole oriented in the 
+			selected direction. 
+		\item  The LO~-~TO splitting is the one expected by the \\ Lyddane-Sachs-Teller relation: 
+			$$ \omega_{LO} = \sqrt{\frac{\epsilon_0}{\epsilon_{\infty}}} \cdot \omega_{TO} = \sqrt{\frac{11.3}{9.4}}\cdot 374 = 410 $$ 
+	\end{itemize}
+	}
+\hskip 2cm 
+\parbox{10cm}{
+	\card{\small
+		\&input \\
+    		fildyn = 'AlAs.dyn',\\
+    		asr='simple',  \\	
+    		amass(1)=26.98, \\
+    		amass(2)=74.92\\
+    		filout='AlAs-dynmatLOTO.out'\\
+    		fileig='AlAs-dynmatLOTO.modes'\\
+    		filmol='AlAs-dynmatLOTO.mold'\\
+    		filxsf='AlAs-dynmatLOTO.xsf'\\ 
+    		q(1) = 1.0, \\
+    		q(2) = 1.0, \\
+    		q(3) = 0.0  \\
+ 	/
+	}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise2: phonon dispersion in fcc-AlAs} 
+In this exercise we will compute the phonon dispersion and the VDOS of AlAs. 
+The material for this exercise is in \file{../../Day2/PHONON/Exercise2} directory. 
+First step will be computing the dynamical matrices for a uniform mesh of wavevectors with \prog{ph.x}
+
+\begin{itemize} 
+	
+	\item We first execute the scf calculations:\\
+		\exec{mpirun -np 2 pw.x -i AlAs.scf.in > AlAs.scf.out}\\ 
+	\item We now execute the phonon calculation, as we are running the calculation for many  $\mathbf{q}$s it is usually more efficient 
+		to use the image parallelism as much as possible: \\
+	        \exec{mpirun -np 2 ph.x -ni 2 -i AlAs.ph.in > AlAs.ph\_images.out} \\ 
+	\item After using the image parallelism one has to execut a further single image \prog{ph.x} run to collect data and print the dynamical matrices. 
+		\begin{itemize}
+		 	\item Check that \var{recover} is set to \value{.true.} in \file{AlAs.ph.in}
+			\item Execute with a  single image the recover run:\\
+				\exec{mpirun -np 2 ph.x -i AlAs.ph.in > AlAs.ph\_recover.out}  
+		\end{itemize}
+	\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercize2: Phonon input}
+\vskip 4em
+\parbox{16cm}{
+	\begin{itemize}
+		\item We \var{ldisp}  to  \value{.true.} to activate the calculation on a uniform mesh
+		\item \var{nq1}, \var{nq2}, and \var{nq3} are used to set the uniform mesh used.
+		\item Symmetries will be used to reduce the number of $\mathbf{q}$ computed. 
+		\item \var{recover} must be set to \value{.true.} whenever  restarting the calculation.
+		\item \var{fildyn} in this case indicates the suffix for the dynamical matrix files, a separate
+			file will be produced for each q-point computed. 
+	\end{itemize}
+	}
+\hskip 2cm
+\parbox{8cm}{
+	\card{
+	Phonons on uniform q-grid\\
+ 	\&inputph\\
+  	prefix='AlAs',\\  
+  	tr2\_ph = 1.0d-14,\\
+  	recover = .false.\\
+  	ldisp = .true.,\\
+  	nq1 = 4\\
+  	nq2 = 4\\
+  	nq3 = 4\\
+   	outdir='./tmp'\\
+  	fildyn='AlAs.dyn',\\
+ 	/}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{~\\[-0.4em] Exercise 2: Fourier interpolation of dynamical matrices }
+\vskip 2 cm
+\parbox{14cm}{
+	\begin{itemize}
+		\item We use the dynamical matrices on the $\mathrm{nq}_1 \times \mathrm{nq}_2 \times \mathrm{nq}_3$ 
+			mesh to generate the force constants for a 
+			$\mathrm{nq}_1 \times \mathrm{nq}_2 \times \mathrm{nq}_3$ supercell. \\[1em]
+			\exec{q2r.x -i AlAs.q2r.in > AlAs.q2r.log} \\ 
+		\item  We need to specify the suffix of the dynamical matrix files in \var{fildyn}
+		\item  The force constants are saved in the file specified by \var{flfrc}.  
+	\end{itemize}
+}
+\hskip 2cm
+\parbox{8cm}{
+	\card{\\
+       \&input
+	fildyn='AlAs.dyn',\\
+        zasr='simple',\\ 
+        flfrc='AlAs444.fc'\\
+ /
+	}
+}
+%	\item With the dynamical matrices and dielectric tensors  computed above we compute the interatomic force constants using \prog{q2r.x}:\\
+%		\exec {q2r.x -i AlAs.q2r.in > AlAs-q2r.log} 
+%	\item With the interatomic force constants we now compute the phonon dispersion and the VDOS using \prog{matdyn.x}:\\
+%		\exec{matdyn.x -i AlAs.matdyn\_with\_labels.in > AlAs.matdyn\_dispersion.log} \\
+%		\exec{matdyn.x -i AlAs\_dos.in > AlAs\_matdyn\_dos.log} \\ 
+%	
+%\end{itemize}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\head{Exercise 2: Fourier interpolation}
+
+\begin{itemize}
+	\item Fourier transforming back  the force constants we estimate the dynamical matrices at any $\mathbf{q}$  
+force constants.
+  \item The long-range dipole-dipole interaction has been removed by \prog{q2r.x} 
+	  and will be readded by \prog{matdyn.x}. 
+  \item  The range of the remaing ion-ion interaction is assumed to be shorter than the chosen supercell. 
+\end{itemize}
+\vskip 1em
+\parbox{12cm}{\small
+  \begin{itemize}
+	  \item We first compute the  phonon dispersion\\[0.5em]
+	    \exec{matdyn.x -i AlAs.matdyn.in} \\[-1.0em] 
+    \item For the dispersion we set \var{q\_in\_band\_form} to 
+	    \value{.true.} and use band form for indicating the BZ path. 
+    \item {coordinates can be indicated in $2\pi/a$ units, or setting \var{q\_in\_cryst\_coord} to \value{.true.} 
+	   in fractional coordinated of the reciprocal lattice.}
+    %\item {\hide or directly using special labels; using \var{\hide point\_label\_type} flag one can chose between the  
+    %		   notation of Setyawan-Curtarolo   paper  (\value{\hide 'SC'}) or the Bilbao Crystallographic one (\value{\hide 'BI'})}
+    
+  \end{itemize}
+	}
+\hskip 4cm 
+\parbox{9cm}{\small
+	\card{
+	\&input\\
+    	asr = 'simple'\\            
+    	q\_in\_band\_form = .true.\\ 
+    	flfrc='AlAs444.fc',\\           
+    	flfrq='AlAs\_dispersion.freq'\\
+ /\\
+ 6\\
+   0.00 0.00  0.00 18\\
+   0.75 0.75  0.00 22\\
+   0.50 1.00  0.00 17\\
+   0.00 1.00  0.00 34\\
+   0.00 0.00  0.00 29\\
+   0.50 0.50  0.50  1
+	}
+	}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\head{Exercise 2: Fourier interpolation}
+
+\begin{itemize}
+	\item Fourier transforming back  the force constants we estimate the dynamical matrices at any $\mathbf{q}$  
+force constants.
+  \item The long-range dipole-dipole interaction has been removed by \prog{q2r.x} 
+	  and will be readded by \prog{matdyn.x}. 
+  \item  The range of the remaing ion-ion interaction is assumed to be shorter than the chosen supercell. 
+\end{itemize}
+\vskip 1em
+\parbox{12cm}{\small
+  \begin{itemize}
+	  \item We first compute the  phonon dispersion\\[0.5em]
+	    \exec{matdyn.x -i AlAs.matdyn.in} \\[-1.0em] 
+    \item For the dispersion we set \var{q\_in\_band\_form} to 
+	    \value{.true.} and use band form for indicating the BZ path. 
+    %\item {coordinates can be indicated in $2\pi/a$ units, or setting \var{q\_in\_cryst\_coord} to \value{.true.} 
+    %	   in fractional coordinated of the reciprocal lattice.}
+    \item {or directly using special labels; using \var{point\_label\_type} flag one can chose between the  
+     notation of Setyawan-Curtarolo   paper  (\value{'SC'}) or the one of Bilbao Crystallographic Server (\value{'BI'})}
+    
+  \end{itemize}
+	}
+\hskip 4cm 
+\parbox{9cm}{\small
+	\card{
+    \&input\\
+    asr = 'simple'\\            
+    q\_in\_band\_form = .true.\\ 
+    flfrc='AlAs444.fc',\\           
+    flfrq='AlAs\_dispersion.freq'\\
+    point\_label\_type = 'SC'\\
+ /\\
+ 6\\
+   gG 18\\
+   K  22\\
+   W  17\\
+   X  34\\
+   gG 29\\
+   L  1
+		}
+	}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise 2: Fourier interpolation}
+
+\begin{itemize}
+	\item Fourier transforming back  the force constants we estimate the dynamical matrices at any $\mathbf{q}$  
+force constants.
+  \item The long-range dipole-dipole interaction has been removed by \prog{q2r.x} 
+	  and will be readded by \prog{matdyn.x}. 
+  \item  The range of the remaing ion-ion interaction is assumed to be shorter than the chosen supercell. 
+\end{itemize}
+\vskip 1em
+\parbox{13cm}{\small
+  \begin{itemize}
+	  \item We then compute the  VDOS\\[0.5em]
+	    \exec{matdyn.x -i AlAs\_dos.matdyn.in} \\[-1.0em] 
+    \item For the VDOS  we set \var{dos} to  \value{.true.} and indicate 
+	    values for k-mesh with \var{nk1}, \var{nk2}, \var{nk3}, and \var{deltaE} for 
+		  the VDOS step 
+    \item {remember to rename all printout files and indicate with \var{fldos} a filename for the VDOS printout}
+    
+  \end{itemize}
+	}
+\hskip 4cm 
+\parbox{9cm}{\small
+	\card{
+    \&input\\
+    asr = 'simple'\\            
+    dos = .true. \\
+    deltaE = 1.0 \\
+    flfrc='AlAs444.fc',\\           
+    nk1 = 8 \\
+    nk2 = 8 \\
+    nk3 = 8\\ 
+    flfrq = 'AlAs\_dos.freq'\\
+    flvec = 'AlAS\_dos.modes'\\
+    fleig = 'AlAS\_dos.eig'\\
+    fldos = 'AlAs\_vdos'\\
+ / 
+		}
+	}
+
 
 
 \end{document}

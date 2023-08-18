@@ -32,7 +32,7 @@
 %
 \def\indent{\hspace*{1cm}}
 \def\prompt{\texttt{\$~}}
-\def\prompt{{\footnotesize $\bullet$}~}
+\def\prompt{{\footnotesize \codecolor {\textgreater}}~}
 \def\exec#1{\indent\prompt\code{#1}}
 \def\codeline#1{\indent\code{#1}}
 \parindent 0pt
@@ -52,6 +52,7 @@
 \def\nml#1{\texttt{\magenta #1}}
 \def\card#1{\texttt{\cardcolor #1}}
 \def\flag#1{\texttt{\green #1}}
+\def\value#1{\texttt{\burgundy #1}}
 
 % aliases for math
 \def\vr{\ensuremath{\bm{r}}}
