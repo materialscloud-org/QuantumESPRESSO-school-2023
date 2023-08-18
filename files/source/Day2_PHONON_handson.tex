@@ -624,12 +624,48 @@ force constants.
     flfrq = 'AlAs\_dos.freq'\\
     flvec = 'AlAS\_dos.modes'\\
     fleig = 'AlAS\_dos.eig'\\
-    fldos = 'AlAs\_vdos'\\
+    fldos = 'AlAs.vdos'\\
  / 
 		}
 	}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise 2: plotting the results}
 
+\parbox{18cm}{\small
+\begin{itemize}
+  \item  Dispersion plot using \prog{plotband.x} and \prog{gnuplot} script:
+  \begin{itemize}
+	\item prepare the data with \prog{plotband.x}:\\[0.1em]
+		\exec{plotband.x < AlAs.plotband.in > plotband.log}\\ 
+	\item use the python script \file{ploti\_dispersion.gp} with \prog{gnuplot}
+		\exec{gnuplot plot\_dispersion.gp} \\
+		\exec{evince phonon\_dispersion.eps} 	
+   \end{itemize}
+\end{itemize}
+}
+\vskip 2cm 
+\begin{center}
+\parbox{14cm}{
+	\includegraphics[width=12cm]{../pictures/phonon_dispersion.png} 
+	}
+\end{center}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\head{Exercise 2: plotting the results}
+
+\parbox{18cm}{
+\begin{itemize}
+	\item  Dispersion plot + VDOS using \prog{python} and \prog{matplotlib}:\\
+		\exec {python plot\_dispersion\_and\_dos.py}\\
+		\exec {eog disp\_and\_dos.png}
+\end{itemize}
+}
+\vskip 2cm 
+\begin{center}
+\parbox{14cm}{
+	\includegraphics[width=12cm]{../../Day2/PHONON/Exercise2/Reference/disp_and_dos.png} 
+	}
+\end{center}
 
 \end{document}
 
