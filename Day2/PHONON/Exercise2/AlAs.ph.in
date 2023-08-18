@@ -2,7 +2,7 @@ Phonons on a uniform q-grid
  &inputph
   prefix='AlAs',           ! Specify a prefix (it has to be the same as in pw.AlAs.in)
   tr2_ph = 1.0d-14,
-  recover = .true.
+  recover = .false.
   ldisp = .true.,
   nq1 =  4               ! Specify a uniform q-grid
   nq2 =  4

@@ -7,7 +7,7 @@
     fileig = 'AlAs-dynmatLOTO.modes'
     filmol = 'AlAs-dynmatLOTO.mold'
     filxsf = 'AlAs-dynmatLOTO.xsf' 
-    !lperm = .true. 
+    lperm = .true. 
     q(1) = 1.0, 
     q(2) = 0.0, 
     q(3) = 0.0 
