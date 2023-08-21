@@ -103,7 +103,7 @@ NQIRR = 13
 This script is ment to compare the dispersion between two dynamical matrices whose name is 
 in `HARM_DYN` and `SSCHA_DYN`. As a simple edit, pass to `SSCHA_DYN` the same file as `HARM_DYN`.
 
-![Harmonic phonon dispersion of Ag.](../../files/source/SSCHA/harmonic_dispersion.png "Harmonic dispersion of Ag")
+![Harmonic phonon dispersion of Ag.](harmonic_dispersion.png "Harmonic dispersion of Ag")
 
 ## Exercize 3. The SSCHA calculation.
 
@@ -211,8 +211,8 @@ This plots the two files:
 - `minimization_300.freqs` containing the eigenvalues of the force-constant matrix (the energy of the auxiliary phonons) as a function of the minimization step.
 
 
-![Minimization of the free energy and its gradients](../../files/source/SSCHA/minimization_300_data.png "Minimization data")
-![Phonon frequencies as a function of the minimization steps](../../files/source/SSCHA/minimization_300_freqs.png "Minimization frequencies")
+![Minimization of the free energy and its gradients](minimization_300_data.png "Minimization data")
+![Phonon frequencies as a function of the minimization steps](minimization_300_freqs.png "Minimization frequencies")
 
 
 Silver is highly harmonic, so we converge in only two steps. 
@@ -360,7 +360,7 @@ In this way, you will see the stress tensor at the end of each population (free 
 
 Plot also the comparison between the harmonic dynamical matrix and the self-consistent dynamical matrix after the vc-relax.
 
-!["Comparison of VC relax self-consistent dynamical matrix (SSCHA) and the Harmonic one."](../../files/source/SSCHA/dispersion_vcrelax.png)
+!["Comparison of VC relax self-consistent dynamical matrix (SSCHA) and the Harmonic one."](dispersion_vcrelax.png)
 
 ## Volumetric thermal expansion
 
@@ -387,7 +387,7 @@ print("The volume of the primitive cell is:", volume, "A^3")
 
 You find a script that automatically plot the volume as a function of temperature in `scripts/plot_volume.py`
 
-!["Volume thermal expansion of silver"](../../files/source/SSCHA/volume.png "Volume thermal expansion of silver")
+!["Volume thermal expansion of silver"](volume.png "Volume thermal expansion of silver")
 
 
 ### Exercize: Run the thermal expansion to more temperature close to 0.
