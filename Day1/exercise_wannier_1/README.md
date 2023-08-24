@@ -1,3 +1,3 @@
-# Wannier functions and Fermi surface of lead
+# Wannier functions of silicon valence bands
 
-See the [hands on PDF](../Day1_handson.pdf).
+See the [hands on PDF](../wannier-tutorial.pdf).
