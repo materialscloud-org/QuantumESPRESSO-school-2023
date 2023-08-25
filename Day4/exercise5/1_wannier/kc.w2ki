@@ -8,6 +8,7 @@
    homo_only        = .false.
    read_unitary_matrix = .true.
    l_vcut           = .true.
+   mp1 = 4, mp2 = 4, mp3 = 4
 /
 &WANNIER
    seedname         = 'wann'
