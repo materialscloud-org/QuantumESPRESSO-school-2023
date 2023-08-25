@@ -12,10 +12,10 @@
       4
     ],
     "do_dos": true,
-    "kc_ham_file": "/home/degennar/CODES/hubbard-koopmans-2022/Day3/exercise2/final/ham_occ_1.dat",
-    "w90_seedname": "/home/degennar/CODES/hubbard-koopmans-2022/Day3/exercise2/init/wannier/occ/wann",
-    "dft_smooth_ham_file": "/home/degennar/CODES/hubbard-koopmans-2022/Day3/exercise2/postproc/wannier/occ/wann_hr.dat",
-    "dft_ham_file": "/home/degennar/CODES/hubbard-koopmans-2022/Day3/exercise2/init/wannier/occ/wann_hr.dat"
+    "kc_ham_file": "/home/max/QuantumESPRESSO-school-2023/Day4/exercise2/final/ham_occ_1.dat",
+    "w90_seedname": "/home/max/QuantumESPRESSO-school-2023/Day4/exercise2/init/wannier/block_1/wann",
+    "dft_smooth_ham_file": "/home/max/QuantumESPRESSO-school-2023/Day4/exercise2/postproc/wannier/block_1/wann_hr.dat",
+    "dft_ham_file": "/home/max/QuantumESPRESSO-school-2023/Day4/exercise2/init/wannier/block_1/wann_hr.dat"
   },
   "kpoints": {
     "grid": [
@@ -24,7 +24,7 @@
       2
     ],
     "path": "LGXKG",
-    "density": 9.997878187573868
+    "density": 9.997878187573864
   },
   "plotting": {
     "degauss": 0.2,

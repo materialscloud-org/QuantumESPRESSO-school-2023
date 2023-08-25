@@ -3,13 +3,14 @@
    verbosity        = 'low'
    restart_mode     = 'restart'
    iprint           = 1
-   outdir           = '/home/degennar/CODES/hubbard-koopmans-2022/Day3/exercise2/TMP-CP/'
+   outdir           = '/home/max/QuantumESPRESSO-school-2023/Day4/exercise2/TMP-CP/'
    prefix           = 'kc'
    disk_io          = 'high'
-   pseudo_dir       = '/home/degennar/CODES/koopmans/src/koopmans/pseudopotentials/pseudo_dojo_standard_v0.4.1/lda/'
+   pseudo_dir       = '/home/max/koopmans/src/koopmans/pseudopotentials/pseudo_dojo_standard_v0.4.1/lda/'
    ndr              = 60
    ndw              = 70
    write_hr         = .true.
+   print_real_space_density = .false.
 /
 &SYSTEM
    ibrav            = 2
@@ -76,7 +77,7 @@ Si  28.085 Si.upf
 ATOMIC_POSITIONS crystal
 Si  -0.0000000000 0.0000000000 -0.0000000000
 Si  0.1250000000 0.1250000000 0.1250000000
-Si  -0.0000000000 -0.0000000000 0.5000000000
+Si  -0.0000000000 0.0000000000 0.5000000000
 Si  0.1250000000 0.1250000000 0.6250000000
 Si  -0.0000000000 0.5000000000 -0.0000000000
 Si  0.1250000000 0.6250000000 0.1250000000

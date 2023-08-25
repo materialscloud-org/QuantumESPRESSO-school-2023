@@ -1,5 +1,5 @@
 &inputpp
-   outdir           = '/home/degennar/CODES/hubbard-koopmans-2022/Day3/exercise2/init/TMP'
+   outdir           = '/home/max/QuantumESPRESSO-school-2023/Day4/exercise2/init/TMP'
    prefix           = 'kc'
    seedname         = 'wann'
    wan_mode         = 'standalone'

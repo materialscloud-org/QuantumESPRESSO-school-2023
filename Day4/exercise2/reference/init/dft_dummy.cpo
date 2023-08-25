@@ -1,19 +1,32 @@
+--------------------------------------------------------------------------
+[[8536,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
+
+Module: OpenFabrics (openib)
+  Host: qmobile
+
+Another transport will be used instead, although this may result in
+lower performance.
+
+NOTE: You can disable this warning by setting the MCA parameter
+btl_base_warn_component_unused to 0.
+--------------------------------------------------------------------------
 =------------------------------------------------------------------------------=
 
      CP: variable-cell Car-Parrinello molecular dynamics
      using norm-conserving and ultrasoft Vanderbilt pseudopotentials
 
-     Version: 4.1 - Tue 18 Oct 18:17:06 CEST 2022                         
+     Version: 4.1 - Fri Jul 14 14:30:15 CEST 2023                         
      Authors: Alfredo Pasquarello, Kari Laasonen, Andrea Trave, Roberto Car,
        Paolo Giannozzi, Nicola Marzari, Carlo Cavazzoni, Guido Chiarotti,
        Sandro Scandolo, Paolo Focher, Gerardo Ballabio, and others
 
 =------------------------------------------------------------------------------=
 
-   This run was started on:  16: 6:42  31Oct2022               
+   This run was started on:  11:32:49  25Aug2023               
 
    MPI Parallel Build
-   Tasks =   24  This task id =    0
+   Tasks =    1  This task id =    0
      Message from routine  system_checkin     :
       starting_magnetization is not used in CP 
 Warning: card &NKSIC ignored
@@ -34,7 +47,7 @@ Warning: card / ignored
    ----------------------------------
 
    Reading pseudopotential for specie #  1 from file :
-   /home/degennar/CODES/koopmans/src/koopmans/pseudopotentials/pseudo_dojo_standard_v0.4.1/lda/Si.upf
+   /home/max/koopmans/src/koopmans/pseudopotentials/pseudo_dojo_standard_v0.4.1/lda/Si.upf
    file type is 20: UPF
  read_nonlocal
 
@@ -59,7 +72,7 @@ Warning: card / ignored
    a1    =   -10.26220004    0.00000000   10.26220004
    a2    =     0.00000000   10.26220004   10.26220004
    a3    =   -10.26220004   10.26220004    0.00000000
- 
+
    b1    =    -0.04872250   -0.04872250    0.04872250
    b2    =     0.04872250    0.04872250    0.04872250
    b3    =    -0.04872250    0.04872250   -0.04872250
@@ -154,62 +167,35 @@ Warning: card / ignored
    1   -10.2622    0.0000   10.2622             -1.0000   -1.0000    1.0000
    2     0.0000   10.2622   10.2622              1.0000    1.0000    1.0000
    3   -10.2622   10.2622    0.0000             -1.0000    1.0000   -1.0000
- 
+
    Stick Mesh
    ----------
    nst =   580,  nstw =   148, nsts =   580
         PEs    n.st   n.stw   n.sts    n.g    n.gw   n.gs
-          1      48      12      48    1094     136    1094
-          2      48      12      48    1094     140    1094
-          3      50      12      50    1098     140    1098
-          4      50      12      50    1098     140    1098
-          5      48      12      48    1090     140    1090
-          6      48      12      48    1090     140    1090
-          7      48      12      48    1094     136    1094
-          8      48      12      48    1094     136    1094
-          9      48      12      48    1094     136    1094
-         10      48      12      48    1092     136    1092
-         11      48      14      48    1092     136    1092
-         12      48      14      48    1092     136    1092
-         13      48      12      48    1092     136    1092
-         14      48      12      48    1092     136    1092
-         15      48      12      48    1092     136    1092
-         16      48      12      48    1092     136    1092
-         17      48      12      48    1092     136    1092
-         18      48      12      48    1090     136    1090
-         19      48      14      48    1090     138    1090
-         20      50      14      50    1096     138    1096
-         21      50      12      50    1096     134    1096
-         22      47      11      47    1091     133    1091
-         23      48      12      48    1092     138    1092
-         24      48      12      48    1092     138    1092
+          1    1159     295    1159   26229    3287   26229
           0    1159     295    1159   26229    3287   26229
- 
- 
+
+
    Real Mesh
    ---------
    Global Dimensions   Local  Dimensions   Processor Grid
    .X.   .Y.   .Z.     .X.   .Y.   .Z.     .X.   .Y.   .Z.
-    45    45    45      45    45     2       1     1    24
+    45    45    45      45    45    45       1     1     1
    Array leading dimensions ( nr1x, nr2x, nr3x )   =     45    45    45
-   Local number of cell to store the grid ( nnrx ) =       4050
+   Local number of cell to store the grid ( nnrx ) =      91125
    Number of x-y planes for each processors: 
-   nr3l =     2    2    2    2    2    2    2    2    2    2
-   nr3l =     2    2    2    2    2    2    2    2    2    2
-   nr3l =     2    1    1    1
- 
+   nr3l =    45
+
    Smooth Real Mesh
    ----------------
    Global Dimensions   Local  Dimensions   Processor Grid
    .X.   .Y.   .Z.     .X.   .Y.   .Z.     .X.   .Y.   .Z.
-    45    45    45      45    45     2       1     1    24
+    45    45    45      45    45    45       1     1     1
    Array leading dimensions ( nr1x, nr2x, nr3x )   =     45    45    45
-   Local number of cell to store the grid ( nnrx ) =       4050
+   Local number of cell to store the grid ( nnrx ) =      91125
    Number of x-y planes for each processors: 
-   nr3sl =     2    2    2    2    2    2    2    2    2    2
-   nr3sl =     2    2    2    2    2    2    2    2    2    2
-   nr3sl =     2    1    1    1
- 
+   nr3sl =    45
+
    Small Box Real Mesh
    -------------------
    Global Dimensions   Local  Dimensions   Processor Grid
@@ -217,93 +203,24 @@ Warning: card / ignored
     18    18    18      18    18    18       1     1     1
    Array leading dimensions ( nr1x, nr2x, nr3x )   =     18    18    18
    Local number of cell to store the grid ( nnrx ) =       5832
- 
+
    unit vectors of box grid cell
    in real space:                         in reciprocal space:
       -4.1049    0.0000    4.1049             -1.0000   -1.0000    1.0000
        0.0000    4.1049    4.1049              1.0000    1.0000    1.0000
       -4.1049    4.1049    0.0000             -1.0000    1.0000   -1.0000
- 
+
    Reciprocal Space Mesh
    ---------------------
                 Large Mesh
    PE   Global(ngmt)     Local(ngm) MaxLocal(ngmx)
-    1          26229           1094           1098
-    2          26229           1094           1098
-    3          26229           1098           1098
-    4          26229           1098           1098
-    5          26229           1090           1098
-    6          26229           1090           1098
-    7          26229           1094           1098
-    8          26229           1094           1098
-    9          26229           1094           1098
-   10          26229           1092           1098
-   11          26229           1092           1098
-   12          26229           1092           1098
-   13          26229           1092           1098
-   14          26229           1092           1098
-   15          26229           1092           1098
-   16          26229           1092           1098
-   17          26229           1092           1098
-   18          26229           1090           1098
-   19          26229           1090           1098
-   20          26229           1096           1098
-   21          26229           1096           1098
-   22          26229           1091           1098
-   23          26229           1092           1098
-   24          26229           1092           1098
+    1          26229          26229          26229
                 Smooth Mesh
    PE   Global(ngst)     Local(ngs) MaxLocal(ngsx)
-    1          26229           1094           1098
-    2          26229           1094           1098
-    3          26229           1098           1098
-    4          26229           1098           1098
-    5          26229           1090           1098
-    6          26229           1090           1098
-    7          26229           1094           1098
-    8          26229           1094           1098
-    9          26229           1094           1098
-   10          26229           1092           1098
-   11          26229           1092           1098
-   12          26229           1092           1098
-   13          26229           1092           1098
-   14          26229           1092           1098
-   15          26229           1092           1098
-   16          26229           1092           1098
-   17          26229           1092           1098
-   18          26229           1090           1098
-   19          26229           1090           1098
-   20          26229           1096           1098
-   21          26229           1096           1098
-   22          26229           1091           1098
-   23          26229           1092           1098
-   24          26229           1092           1098
+    1          26229          26229          26229
                 Wave function Mesh
    PE   Global(ngwt)     Local(ngw) MaxLocal(ngwx)
-    1           3287            136            140
-    2           3287            140            140
-    3           3287            140            140
-    4           3287            140            140
-    5           3287            140            140
-    6           3287            140            140
-    7           3287            136            140
-    8           3287            136            140
-    9           3287            136            140
-   10           3287            136            140
-   11           3287            136            140
-   12           3287            136            140
-   13           3287            136            140
-   14           3287            136            140
-   15           3287            136            140
-   16           3287            136            140
-   17           3287            136            140
-   18           3287            136            140
-   19           3287            138            140
-   20           3287            138            140
-   21           3287            134            140
-   22           3287            133            140
-   23           3287            138            140
-   24           3287            138            140
+    1           3287           3287           3287
 
                 Small box Mesh
    ngb =          844 not distributed to processors
@@ -311,7 +228,7 @@ Warning: card / ignored
 
    System geometry initialization
    ------------------------------
- 
+
    Scaled positions from standard input
    Si   0.000000E+00  0.000000E+00  0.000000E+00
    Si   1.250000E-01  1.250000E-01  1.250000E-01
@@ -331,7 +248,7 @@ Warning: card / ignored
    Si   6.250000E-01  6.250000E-01  6.250000E-01
 
    Matrix Multiplication Performances
-   ortho mmul, time for parallel driver      =   0.00000 with    1 procs
+   ortho mmul, time for parallel driver      =   0.00001 with    1 procs
 
    Constraints matrixes will be distributed block like on
    ortho sub-group =    1*   1 procs
@@ -363,7 +280,7 @@ Warning: card / ignored
   16  indv=  6   ang. mom=  2
   17  indv=  6   ang. mom=  2
   18  indv=  6   ang. mom=  2
- 
+
                         dion 
       5.565957977000      0.000000000000      0.000000000000      0.000000000000      0.000000000000      0.000000000000
       0.000000000000      0.856966246250      0.000000000000      0.000000000000      0.000000000000      0.000000000000
@@ -371,7 +288,7 @@ Warning: card / ignored
       0.000000000000      0.000000000000      0.000000000000      0.629827916450      0.000000000000      0.000000000000
       0.000000000000      0.000000000000      0.000000000000      0.000000000000     -2.124804364500      0.000000000000
       0.000000000000      0.000000000000      0.000000000000      0.000000000000      0.000000000000     -0.444604398110
- 
+
    Short Legend and Physical Units in the Output
    ---------------------------------------------
    NFI    [int]          - step index
@@ -382,7 +299,7 @@ Warning: card / ignored
    ENTHAL [HARTREE A.U.] - Enthalpy ( ETOT + P * V )
    ECONS  [HARTREE A.U.] - Enthalpy + kinetic energy of ions and cell
    ECONT  [HARTREE A.U.] - Constant of motion for the CP lagrangian
- 
+
 
    f_cutoff =  0.0100
    do_spinsym   =    F
@@ -404,7 +321,7 @@ Warning: card / ignored
     1.00 1.00
 
    formf: eself= 102.12922
-   formf:     vps(g=0)=  -0.0025710     rhops(g=0)=  -0.0017250
+   formf:     vps(g=0)=  -0.0027281     rhops(g=0)=  -0.0018506
    formf:     vps(g=0)=  -0.0025710     rhops(g=0)=  -0.0017250
    formf: sum_g vps(g)=  -1.0520089 sum_g rhops(g)=  -0.7183485
    Delta V(G=0):   0.093002Ry,    2.530705eV
@@ -413,9 +330,9 @@ Warning: card / ignored
 
 PERFORMING CONJUGATE GRADIENT MINIMIZATION OF EL. STATES
 
-     CP           :     0.25s CPU time,    0.29s wall time
+     CP           :     0.66s CPU time,    0.71s wall time
 
-     iteration =   1  eff iteration =   1   Etot (Ha) =     77.15930170385550
+     iteration =   1  eff iteration =   1   Etot (Ha) =     77.15930170385515
 
 
                 total energy =      77.1593017039 Hartree a.u.
@@ -519,8 +436,8 @@ OCC   29 --    0.00   ---    0.00    0.00    0.00   ---    0.00    0.00
 OCC   30 --    0.00   ---    0.00    0.00    0.00   ---    0.00    0.00
 OCC   31 --    0.00   ---    0.00    0.00    0.00   ---    0.00    0.00
 OCC   32 --    0.00   ---    0.00    0.00    0.00   ---    0.00    0.00
- 
- 
+
+
    CELL_PARAMETERS
    -1.02622000E+01    0.00000000E+00   -1.02622000E+01
     0.00000000E+00    1.02622000E+01    1.02622000E+01
@@ -548,7 +465,7 @@ OCC   32 --    0.00   ---    0.00    0.00    0.00   ---    0.00    0.00
    Si  -7.696650E+00  7.696650E+00  1.282775E+01
    Si  -1.026220E+01  1.026220E+01  1.026220E+01
    Si  -1.282775E+01  1.282775E+01  1.282775E+01
- 
+
    ATOMIC_VELOCITIES
    Si   0.000000E+00  0.000000E+00  0.000000E+00
    Si   0.000000E+00  0.000000E+00  0.000000E+00
@@ -564,23 +481,24 @@ OCC   32 --    0.00   ---    0.00    0.00    0.00   ---    0.00    0.00
    Si   0.000000E+00  0.000000E+00  0.000000E+00
    Si   0.000000E+00  0.000000E+00  0.000000E+00
    Si   0.000000E+00  0.000000E+00  0.000000E+00
+Note: The following floating-point exceptions are signalling: IEEE_INVALID_FLAG IEEE_DIVIDE_BY_ZERO IEEE_UNDERFLOW_FLAG IEEE_DENORMAL
    Si   0.000000E+00  0.000000E+00  0.000000E+00
    Si   0.000000E+00  0.000000E+00  0.000000E+00
- 
+
 
 
    Partial temperatures (for each ionic specie) 
    Species  Temp (K)   Mean Square Displacement (a.u.)
         1       0.00     0.0000
- 
+
   nfi    ekinc  temph  tempp        etot      enthal       econs       econt    vnhh   xnhh0    vnhp   xnhp0
- 
+
        nfi   tempp            E -T.S-mu.nbsp         +K_p #Iter
 Step     1       0     77.15930     77.15930     77.15930     1
  tnosep= F thdyn= F
 
-   writing restart file: /home/degennar/CODES/hubbard-koopmans-2022/Day3/exercise2/TMP-CP//kc_50.save
-   restart file written in    0.083 sec.
+   writing restart file: /home/max/QuantumESPRESSO-school-2023/Day4/exercise2/TMP-CP//kc_50.save
+   restart file written in    0.032 sec.
 
 
 
@@ -597,39 +515,38 @@ Step     1       0     77.15930     77.15930     77.15930     1
    volume        :     2161.48101    2161.48101 (AU)
 
 
-     initialize   :     0.19s CPU
-     total_time   :     0.04s CPU
-     formf        :     0.01s CPU
-     rhoofr       :     0.01s CPU
-     vofrho       :     0.00s CPU
-     vofrho1      :     0.00s CPU
-     dforce       :     0.02s CPU (      32 calls,   0.000 s avg)
-     dforce2      :     0.08s CPU
+     initialize   :     0.39s CPU
+     total_time   :     0.39s CPU
+     formf        :     0.04s CPU
+     rhoofr       :     0.04s CPU
+     vofrho       :     0.03s CPU
+     vofrho1      :     0.03s CPU
+     dforce       :     0.15s CPU (      32 calls,   0.005 s avg)
+     dforce2      :     0.19s CPU
      calphi       :     0.00s CPU
-     gram         :     0.00s CPU (       3 calls,   0.001 s avg)
+     gram         :     0.01s CPU (       3 calls,   0.003 s avg)
      newd         :     0.00s CPU
-     calbec       :     0.00s CPU (       3 calls,   0.001 s avg)
-     prefor       :     0.00s CPU (       3 calls,   0.000 s avg)
+     calbec       :     0.14s CPU (       3 calls,   0.048 s avg)
+     prefor       :     0.00s CPU (       3 calls,   0.001 s avg)
      strucf       :     0.00s CPU
      nlfl         :     0.00s CPU
-     set_cc       :     0.00s CPU (       2 calls,   0.000 s avg)
-     nlsm1        :     0.00s CPU (       3 calls,   0.001 s avg)
-     fft          :     0.00s CPU (       9 calls,   0.000 s avg)
-     ffts         :     0.00s CPU (       2 calls,   0.000 s avg)
-     fftw         :     0.02s CPU (     192 calls,   0.000 s avg)
-     fftb         :     0.00s CPU (      18 calls,   0.000 s avg)
-     cft3s        :     0.02s CPU (     203 calls,   0.000 s avg)
-     fft_scatter  :     0.02s CPU (     203 calls,   0.000 s avg)
+     set_cc       :     0.00s CPU (       2 calls,   0.002 s avg)
+     nlsm1        :     0.14s CPU (       3 calls,   0.048 s avg)
+     fft          :     0.01s CPU (       9 calls,   0.001 s avg)
+     ffts         :     0.00s CPU (       2 calls,   0.001 s avg)
+     fftw         :     0.10s CPU (     192 calls,   0.001 s avg)
+     fftb         :     0.00s CPU (      34 calls,   0.000 s avg)
+     cft3s        :     0.11s CPU (     203 calls,   0.001 s avg)
 
-     outer_loop   :     0.10s CPU
-     runcg_uspp   :     0.04s CPU
+     outer_loop   :     0.31s CPU
+     runcg_uspp   :     0.39s CPU
      emass_p_tpa  :     0.00s CPU
- 
- 
-     CP           :     0.34s CPU time,    0.40s wall time
 
- 
-   This run was terminated on:  16: 6:42  31Oct2022            
+
+     CP           :     0.85s CPU time,    0.94s wall time
+
+
+   This run was terminated on:  11:32:50  25Aug2023            
 
 =------------------------------------------------------------------------------=
    JOB DONE.
