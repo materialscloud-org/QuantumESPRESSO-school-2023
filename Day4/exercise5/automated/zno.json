@@ -46,21 +46,15 @@
         },
         "w90": {
             "conv_tol": 1e-8,
-            "occ": {
-                "projections_blocks": [
-                    [{"site": "Zn", "ang_mtm": "l=0"}],
-                    [{"site": "Zn", "ang_mtm": "l=1"}],
-                    [{"site": "O", "ang_mtm": "l=0"}],
-                    [{"site": "Zn", "ang_mtm": "l=2"},
-                     {"site": "O", "ang_mtm": "l=1"}]
-                ]},
-            "emp": {
-                "dis_froz_max": 14.5,
-                "dis_win_max": 17.0,
-                "projections": [
-                    {"site": "Zn", "ang_mtm": "l=0"}
-                ]
-            }
+            "dis_froz_max": 14.5,
+            "dis_win_max": 17.0,
+            "projections": [
+                [{"site": "Zn", "ang_mtm": "l=0"}],
+                [{"site": "Zn", "ang_mtm": "l=1"}],
+                [{"site": "O", "ang_mtm": "l=0"}],
+                [{"site": "Zn", "ang_mtm": "l=2"},
+                 {"site": "O", "ang_mtm": "l=1"}],
+                [{"site": "Zn", "ang_mtm": "l=0"}]]
         }
     }
 }
