@@ -36,15 +36,14 @@
         },
         "w90": {
             "bands_plot": true,
-            "projections": [{"fsite": [ 0.25, 0.25, 0.25 ], "ang_mtm": "sp3"}],
-            "emp": {
-                "dis_froz_max": 10.6,
-                "dis_win_max": 16.9
-            }
+            "projections": [[{"fsite": [ 0.25, 0.25, 0.25 ], "ang_mtm": "sp3"}],
+                            [{"fsite": [ 0.25, 0.25, 0.25 ], "ang_mtm": "sp3"}]],
+            "dis_froz_max": 10.6,
+            "dis_win_max": 16.9
         },
         "ui": {
-            "smooth_int_factor": 4
-        }
+	    "smooth_int_factor": 4
+	}
     },
     "plotting": {
         "Emin": -15,

@@ -1,5 +1,18 @@
+--------------------------------------------------------------------------
+[[8403,1],0]: A high-performance Open MPI point-to-point messaging module
+was unable to find any relevant network interfaces:
 
-     Program PW2WANNIER v.7.1 starts on 31Oct2022 at 16: 7: 1 
+Module: OpenFabrics (openib)
+  Host: qmobile
+
+Another transport will be used instead, although this may result in
+lower performance.
+
+NOTE: You can disable this warning by setting the MCA parameter
+btl_base_warn_component_unused to 0.
+--------------------------------------------------------------------------
+
+     Program PW2WANNIER v.7.2 starts on 25Aug2023 at 11:35:35 
 
      This program is part of the open-source Quantum ESPRESSO suite
      for quantum simulation of materials; please cite
@@ -10,18 +23,17 @@
      in publications or presentations arising from this work. More details at
      http://www.quantum-espresso.org/quote
 
-     Parallel version (MPI), running on    24 processors
+     Parallel version (MPI), running on     1 processors
 
      MPI processes distributed on     1 nodes
-     R & G space division:  proc/nbgrp/npool/nimage =      24
-     181297 MiB available memory on the printing compute node when the environment starts
- 
- 
+     286 MiB available memory on the printing compute node when the environment starts
+
+
   Reading nscf_save data
 
      Reading xml data from directory:
 
-     /home/degennar/CODES/hubbard-koopmans-2022/Day3/exercise2/postproc/TMP/kc.save/
+     /home/max/QuantumESPRESSO-school-2023/Day4/exercise2/postproc/TMP/kc.save/
 
      IMPORTANT: XC functional enforced from input :
      Exchange-correlation= PW
@@ -29,51 +41,49 @@
      Any further DFT definition will be discarded
      Please, verify this is what you really want
 
- 
-     Parallelization info
+
+     G-vector sticks info
      --------------------
      sticks:   dense  smooth     PW     G-vecs:    dense   smooth      PW
-     Min          12      12      4                  136      136      29
-     Max          13      13      5                  138      138      31
      Sum         295     295    109                 3287     3287     725
- 
+
      Using Slab Decomposition
- 
+
      Reading collected, re-writing distributed wavefunctions
- 
+
   Spin CASE ( default = unpolarized )
- 
+
   Wannier mode is: standalone     
- 
+
   -----------------
   *** Reading nnkp 
   -----------------
- 
+
   Checking info from wannier.nnkp file
- 
+
   - Real lattice is ok
   - Reciprocal lattice is ok
   - K-points are ok
   - Number of wannier functions is ok (  4)
   - All guiding functions are given 
- 
+
  Projections:
    -0.250000    0.250000    0.250000 -3  1  1    1.000000
    -0.250000    0.250000    0.250000 -3  2  1    1.000000
    -0.250000    0.250000    0.250000 -3  3  1    1.000000
    -0.250000    0.250000    0.250000 -3  4  1    1.000000
- 
+
   Reading data about k-point neighbours 
- 
+
   All neighbours are found 
- 
+
   Opening pp-files 
- 
- 
+
+
   --------------------------
   *** Compute  A projections
   --------------------------
- 
+
   AMN: iknum =      512
        1       2       3       4       5       6       7       8       9      10
       11      12      13      14      15      16      17      18      19      20
@@ -129,11 +139,11 @@
      511     512
 
   AMN calculated
- 
+
   ---------------
   *** Compute  M 
   ---------------
- 
+
   MMN: iknum =      512
        1       2       3       4       5       6       7       8       9      10
       11      12      13      14      15      16      17      18      19      20
@@ -189,43 +199,43 @@
      511     512
 
   MMN calculated
- 
+
   -----------------------------------
   *** Orbital terms are not computed 
   -----------------------------------
- 
+
   -----------------------------------
   *** SHC terms are not computed 
   -----------------------------------
- 
+
   ----------------
   *** Write bands 
   ----------------
- 
- 
+
+
   -----------------------------
   *** Plot info is not printed 
   -----------------------------
- 
+
   -----------------------------
   *** Parity info is not printed 
   -----------------------------
- 
+
   ------------
   *** Stop pp 
   ------------
- 
- 
-     init_pw2wan  :      0.82s CPU      0.89s WALL (       1 calls)
-     compute_amn  :      0.54s CPU      0.57s WALL (       1 calls)
-     compute_mmn  :      0.26s CPU      0.35s WALL (       1 calls)
- 
-     PW2WANNIER   :      1.63s CPU      1.82s WALL
 
- 
-   This run was terminated on:  16: 7: 3  31Oct2022            
+
+     init_pw2wan  :      0.38s CPU      0.49s WALL (       1 calls)
+     compute_amn  :     16.25s CPU     16.36s WALL (       1 calls)
+     compute_mmn  :      0.73s CPU      0.77s WALL (       1 calls)
+
+     PW2WANNIER   :     17.35s CPU     17.62s WALL
+
+
+   This run was terminated on:  11:35:53  25Aug2023            
 
 =------------------------------------------------------------------------------=
    JOB DONE.
 =------------------------------------------------------------------------------=
- 
+
